@@ -1,6 +1,6 @@
->   # LIVRABLE DEV
+>>>   # LIVRABLE DEV
 
->   ## Ethan MACHORO B2
+>>>   ## Ethan MACHORO B2
 
 
 ### Dans un premier temps j'ai défini :
