@@ -13,7 +13,7 @@
 
 - #### Les acrions disponnibles en fonction du status utilisateur :
 
-    - Admins :
+    - Admins (IT et Support) :
         - Gérer les utilisateurs (créer, modifier, supprimer)
         - Gérer annonces (Modifier, Supprimer)
         - Gestion des commerciaux (assigner commerciaux à certaines annonces, ajouter ou supprimer)
