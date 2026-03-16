@@ -34,4 +34,11 @@
 - #### Les outils et language pour la réalisation de la partie technique :
 
     - **Backend** : Virtual Studio Code / Python
-    - 
+    - **Frontend** : HTML / CSS / JavaScript
+    - **Base de Données** : SQL Lite
+
+
+
+## **Ordre de la réalisation des tâches** :
+
+- ### 1) Modélisation de la Base de donnée avec [Google](dbdiagram.io) :
