@@ -1,6 +1,6 @@
->>>   # LIVRABLE DEV
+# LIVRABLE DEV
 
->>>   ## Ethan MACHORO B2
+## Ethan MACHORO B2
 
 
 ### Dans un premier temps j'ai défini :
@@ -14,7 +14,9 @@
 - #### Les acrions disponnibles en fonction du status utilisateur :
 
     - Admins :
-        - XXX
+        - Gérer les utilisateurs (créer, modifier, supprimer)
+        - Gérer annonces (Modifier, Supprimer)
+        - Gestion des commerciaux (assigner commerciaux à certaines annonces, ajouter ou supprimer)
     
     - Clients :
         - déposer une annoce
@@ -24,18 +26,21 @@
     
     - Commercial :
         - déposer une annonce
-        - voir la liste des biens immobiliers
+        - Gérer les annonces (créer, supprimer, modifier,)
+        - voir les statistiques des annonces (les vues, les candidatures)
         - envoyer des messages aux clients
+        - Planifier des visites avec les utilisateurs
     
     - Visiteurs :
         - consulter les annonces
         - s'inscrire
+        - se connecter
 
 - #### Les outils et language pour la réalisation de la partie technique :
 
-    - **Backend** : Virtual Studio Code / Python
+    - **Backend** : Virtual Studio Code (éditeur) / Python
     - **Frontend** : HTML / CSS / JavaScript
-    - **Base de Données** : SQL Lite
+    - **Base de Données** : PostrgeSQL
 
 
 
