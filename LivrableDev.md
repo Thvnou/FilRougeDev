@@ -41,4 +41,4 @@
 
 ## **Ordre de la réalisation des tâches** :
 
-- ### 1) Modélisation de la Base de donnée avec [Google](dbdiagram.io) :
+- ### 1) Modélisation de la Base de donnée avec [dbdiagram.io] :
