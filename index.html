@@ -1,14 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ymmo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <img src="images/Logo.png" alt="logo du site">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation de la page -->
+    <section class="top-page">
+        <div class="info">
+            <p>12 agences sur toute la France</p>
+        </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Mes favoris</li>
+        <li>Mon compte</li>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+
+      <div class="info-utilisateur">
+        <!-- texte qui devra cahnger en fonction du statu de l'utilisateur  -->
+        <h1>YMMO Agence</h1>
+
+        <!-- info qui devra changer en compte client quand l'utilisateur se connectera -->
+        <h3>visiteur</h3>
+      </div>
+
+      <!-- bouton pour acceder au candidature -->
+      <button>Mes candidatures</button>
     </header>
-</body>
+
+    <!-- corp de la page d'acceuille -->
+    <section class="barre-recherche">
+      <section class="barre-recherche">
+        <div class="onglets">
+          <button class="onglet actif">Acheter</button>
+          <button class="onglet">Vendre</button>
+        </div>
+
+        <div class="formulaire-recherche">
+          <input type="text" placeholder="Où cherchez vous ?" />
+          <input type="number" placeholder="Budget" />
+          <input type="number" placeholder="Surface min (m2)" />
+          <button class="btn-rechercher">Rechercher</button>
+        </div>
+      </section>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>

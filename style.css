@@ -1,0 +1,63 @@
+body{
+  margin: 0 auto;
+}
+
+        /* menu de navigation */
+
+section.top-page{
+  display: flex;
+  align-items: center;
+  padding: auto;
+  justify-content: space-between;
+}
+
+section.top-page div.info p{
+  font-size: 17px;
+}
+
+nav.nav-top-page{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav.nav-top-page li{
+  margin: 15px;
+  align-items: center;
+}
+
+
+
+
+        /* Barre menu */
+
+header.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 31, 63);
+}
+
+.logo-barre-menu{
+  width: 100px;
+}
+
+div.info-utilisateur{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: -4px;
+  color: aliceblue;
+}
+
+
+
+        /* barre de recherche (body) */
+
+section.barre-recherche {
+  background-image: url(/images/fontaineAix.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 95vh;
+}
