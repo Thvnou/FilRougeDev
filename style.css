@@ -172,7 +172,7 @@ section.barre-recherche {
   width: 100%;
   box-sizing: border-box;
   padding: 0 35px;
-  background-color: rgba(37, 233, 233, 0.221);
+  background-color: rgba(2, 61, 188, 0.715);
   border-radius: 10px;
 }
 
@@ -227,10 +227,16 @@ section.barre-recherche {
   font-size: 0.9rem;
 }
 
+
+
 .lien-tous-biens {
   display: inline-block;
-  margin-top: 40px;
-  color: brown;
+  background-color: rgb(241, 198, 141);
+  padding: 15px;
+  border-radius: 16px;
+  margin-top: 35px;
+  color: rgb(0, 0, 0);
+  font-size: 2vh;
   font-weight: bold;
   text-decoration: none;
 }
