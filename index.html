@@ -33,24 +33,79 @@
       </div>
 
       <!-- bouton pour acceder au candidature -->
-      <button>Mes candidatures</button>
+      <button class="bouton-mes-candidatures">Mes candidatures</button>
     </header>
 
-    <!-- corp de la page d'acceuille -->
-    <section class="barre-recherche">
+<!-- corps de la page d'accueil -->
+    <section class="barre-recherche-fond">
       <section class="barre-recherche">
-        <div class="onglets">
-          <button class="onglet actif">Acheter</button>
-          <button class="onglet">Vendre</button>
+        <div class="onglets-acheter-vendre">
+          <button class="bouton-acheter">Acheter</button>
+          <button class="bouton-vendre">Vendre</button>
         </div>
-
         <div class="formulaire-recherche">
           <input type="text" placeholder="Où cherchez vous ?" />
           <input type="number" placeholder="Budget" />
           <input type="number" placeholder="Surface min (m2)" />
-          <button class="btn-rechercher">Rechercher</button>
+        </div>
+        <div class="div-bouton-recherche">
+          <button class="bouton-recherche">Rechercher</button>
         </div>
       </section>
+    </section>
+
+
+    <!-- Derniers biens publiés -->
+    <section class="derniers-biens">
+      <h2>Les derniers biens publiés</h2>
+
+      <div class="liste-biens">
+
+        <div class="carte-bien">
+          <img src="images/appart/appart-1.jpeg" alt="Photo du bien" />
+          <div class="infos-bien">
+            <div class="infos-principales">
+              <span class="prix">250 000 €</span>
+              <span class="statut">À vendre</span>
+            </div>
+            <div class="infos-secondaires">
+              <span class="ville">Paris</span>
+              <span class="superficie">120 m²</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carte-bien">
+          <img src="images/appart/appart-2.jpeg" alt="Photo du bien" />
+          <div class="infos-bien">
+            <div class="infos-principales">
+              <span class="prix">150 000 €/mois</span>
+              <span class="statut">À louer</span>
+            </div>
+            <div class="infos-secondaires">
+              <span class="ville">Lyon</span>
+              <span class="superficie">65 m²</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carte-bien">
+          <img src="images/appart/appart-3.jpeg" alt="Photo du bien" />
+          <div class="infos-bien">
+            <div class="infos-principales">
+              <span class="prix">380 000 €</span>
+              <span class="statut">À vendre</span>
+            </div>
+            <div class="infos-secondaires">
+              <span class="ville">Bordeaux</span>
+              <span class="superficie">90 m²</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="biens.html" class="lien-tous-biens">Voir tous nos biens</a>
     </section>
     <script src="script.js"></script>
   </body>

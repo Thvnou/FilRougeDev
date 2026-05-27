@@ -7,6 +7,7 @@ body{
 section.top-page{
   display: flex;
   align-items: center;
+  margin: 0 10vh;
   padding: auto;
   justify-content: space-between;
 }
@@ -40,6 +41,7 @@ header.menu{
 
 .logo-barre-menu{
   width: 100px;
+  margin-left: 10vh;
 }
 
 div.info-utilisateur{
@@ -50,14 +52,174 @@ div.info-utilisateur{
   color: aliceblue;
 }
 
+.bouton-mes-candidatures{
+  margin-right: 15vh;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+
+}
+
+
+      /* Barre de recherche + l'image de fond*/
+.barre-recherche-fond{
+  display: flex;
+  border-radius: 10vh;
+  justify-content:center ;
+  background-image: url(/images/fontaineAix.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+}
 
 
         /* barre de recherche (body) */
 
 section.barre-recherche {
-  background-image: url(/images/fontaineAix.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 95vh;
+  height: 100vh;
+  padding: 5rem;
+  background-image: no-repeat;
+}
+
+.onglets-acheter-vendre{
+  display: flex;
+  align-self: flex-start;
+  gap: 12px;
+}
+
+.div-bouton-recherche{
+  display: flex;
+  align-self: flex-end;
+}
+
+
+      /*Style dees éléments de la barre de recherche*/
+
+.formulaire-recherche{
+  display: flex;
+  gap: 12px;
+  padding: 50px;
+  background-color: rgba(37, 85, 130, 0.803);
+  border-radius: 15px;
+}
+
+.formulaire-recherche input {
+  padding: 12px 16px;        
+  border: none;              /* supprime la bordure par défaut */
+  border-radius: 8px;        
+  font-size: 15px;           
+  width: 100%;               
+  outline: none;             /* supprime le contour bleu au clic */
+}
+
+.bouton-recherche{
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+  background-color: rgba(47, 244, 7, 0.826);
+}
+
+.onglets-acheter-vendre button{
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  outline: none;
+}
+
+
+      /*Dernier biens publiés*/
+.derniers-biens {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.derniers-biens h2 {
+  margin-bottom: 40px;
+  font-size: 1.6rem;
+}
+
+.liste-biens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;              /* ← prend toute la largeur */
+}
+
+.carte-bien {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;                  /* ← chaque carte s'étire également */
+  max-width: 400px;         /* ← limite pour ne pas trop s'étirer */
+}
+
+.carte-bien img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.carte-bien:nth-child(2) {
+  flex: 1;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.infos-bien {
+  padding: 14px;
+}
+
+.infos-principales {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.prix {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.statut {
+  background: rgb(60, 94, 161);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.infos-secondaires {
+  display: flex;
+  gap: 16px;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.lien-tous-biens {
+  display: inline-block;
+  margin-top: 40px;
+  color: brown;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.lien-tous-biens:hover {
+  text-decoration: underline;
 }
