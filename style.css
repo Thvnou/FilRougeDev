@@ -130,7 +130,7 @@ section.barre-recherche {
   font-size: 20px;
   width: 100%;
   outline: none;
-  background-color: rgba(47, 244, 7, 0.826);
+  background-color: rgba(226, 210, 118, 0.841);
 }
 
 .onglets-acheter-vendre button{
@@ -142,6 +142,17 @@ section.barre-recherche {
 }
 
 
+      /*Barre avec des infos sur l'agence*/
+.barre-infos-agence img {
+  box-sizing: border-box;
+  padding: 5vh;          
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
       /*Dernier biens publiés*/
 .derniers-biens {
   padding: 60px 40px;
@@ -150,7 +161,7 @@ section.barre-recherche {
 
 .derniers-biens h2 {
   margin-bottom: 40px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .liste-biens {
@@ -158,7 +169,11 @@ section.barre-recherche {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 100%;              /* ← prend toute la largeur */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 35px;
+  background-color: rgba(37, 233, 233, 0.221);
+  border-radius: 10px;
 }
 
 .carte-bien {
