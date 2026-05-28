@@ -113,6 +113,17 @@ section.barre-recherche {
   justify-content: flex-end;  /* ← pousse à droite dans le wrapper */
 }
 
+.bouton-recherche{
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 25%;
+  outline: none;
+  background-color: rgba(226, 210, 118, 0.93);
+}
+
+
 
       /*Style dees éléments de la barre de recherche*/
 
@@ -133,15 +144,6 @@ section.barre-recherche {
   outline: none;             /* supprime le contour bleu au clic */
 }
 
-.bouton-recherche{
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  width: 100%;
-  outline: none;
-  background-color: rgba(226, 210, 118, 0.841);
-}
 
 .onglets-acheter-vendre button{
   padding: 20px;
@@ -253,4 +255,30 @@ section.barre-recherche {
 
 .lien-tous-biens:hover {
   text-decoration: underline;
+}
+
+section.carte-agences {
+  display: flex;
+  position: relative;
+  margin-top: 12vh;
+  align-items: stretch;   /* ← les deux colonnes prennent la même hauteur */
+}
+
+.carte-agences img {
+  width: 60%;
+  object-fit: cover;
+}
+
+.carte-agences div {
+  display: flex;           /* ← pas "flexbox" */
+  flex-direction: column;
+  justify-content: space-between;  /* ← répartit le texte sur toute la hauteur */
+  width: 40%;
+  background-color: rgb(255 235 223);
+}
+
+.carte-agences .carte-agences img{
+  position: absolute;  /* se superposent sans se pousser */
+  top: 0;
+  left: 0;
 }
