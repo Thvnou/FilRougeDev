@@ -64,32 +64,42 @@ div.info-utilisateur{
 
 
       /* Barre de recherche + l'image de fond*/
-.barre-recherche-fond{
-  display: flex;
+
+.barre-recherche-fond {
+  position: relative;
   border-radius: 10vh;
-  justify-content:center ;
-  background-image: url(/images/fontaineAix.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   margin: 10px;
+  overflow: hidden;
+  height: 600px;            /* ← augmente jusqu'à voir toute l'image */
 }
 
+.image-fond {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;  /* ← centre le cadrage de l'image */
+  display: block;
+}
 
         /* barre de recherche (body) */
 
 section.barre-recherche {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 0;
+  padding: 0;
+}
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding: 5rem;
-  background-image: no-repeat;
+.recherche-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .onglets-acheter-vendre{
@@ -98,9 +108,9 @@ section.barre-recherche {
   gap: 12px;
 }
 
-.div-bouton-recherche{
+.div-bouton-recherche {
   display: flex;
-  align-self: flex-end;
+  justify-content: flex-end;  /* ← pousse à droite dans le wrapper */
 }
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ymmo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -38,18 +38,22 @@
 
 <!-- corps de la page d'accueil -->
     <section class="barre-recherche-fond">
+      <img src="images/fontaineAix.png" alt="fontaine Aix" class="image-fond" />
+
       <section class="barre-recherche">
-        <div class="onglets-acheter-vendre">
-          <button class="bouton-acheter">Acheter</button>
-          <button class="bouton-vendre">Vendre</button>
-        </div>
-        <div class="formulaire-recherche">
-          <input type="text" placeholder="Où cherchez vous ?" />
-          <input type="number" placeholder="Budget" />
-          <input type="number" placeholder="Surface min (m2)" />
-        </div>
-        <div class="div-bouton-recherche">
-          <button class="bouton-recherche">Rechercher</button>
+        <div class="recherche-wrapper">
+          <div class="onglets-acheter-vendre">
+            <button class="bouton-acheter">Acheter</button>
+            <button class="bouton-vendre">Vendre</button>
+          </div>
+          <div class="formulaire-recherche">
+            <input type="text" placeholder="Où cherchez vous ?" />
+            <input type="number" placeholder="Budget" />
+            <input type="number" placeholder="Surface min (m2)" />
+          </div>
+          <div class="div-bouton-recherche">
+            <button class="bouton-recherche">Rechercher</button>
+          </div>
         </div>
       </section>
     </section>
@@ -111,6 +115,6 @@
       </div>
       <a href="biens.html" class="lien-tous-biens">Voir tous nos biens</a>
       </section>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
