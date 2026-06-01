@@ -1,0 +1,147 @@
+body {
+  margin: 0 auto;
+}
+
+/* menu de navigation */
+section.top-page {
+  display: flex;
+  align-items: center;
+  margin: 0 10vh;
+  justify-content: space-between;
+}
+
+section.top-page div.info p {
+  font-size: 17px;
+}
+
+nav.nav-top-page {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav.nav-top-page li {
+  margin: 15px;
+}
+
+/* Barre menu */
+header.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 31, 63);
+  padding: 10px 0;
+}
+
+.logo-barre-menu {
+  width: 100px;
+  margin-left: 10vh;
+}
+
+.info-utilisateur {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: -4px;
+  color: rgb(255, 255, 255);
+}
+
+/* ── Detail annonce ── */
+.detail-annonce {
+  display: flex;
+  gap: 48px;
+  padding: 48px 10vh;
+  align-items: flex-start;
+}
+
+/* ── Côté gauche : photo + bas ── */
+.detail-gauche {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.detail-photo {
+  border: 2px solid #4a90d9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #d0ccc8;
+  aspect-ratio: 4 / 3;
+}
+
+.detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reference {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.btn-candidature {
+  padding: 10px 20px;
+  background: white;
+  border: 1.5px solid #333;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-candidature:hover {
+  background: #001f3f;
+  color: white;
+  border-color: #001f3f;
+}
+
+/* ── Côté droit : infos ── */
+.detail-droite {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.info-ligne {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
+  font-size: 0.78rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.info-valeur {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .detail-annonce {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+}

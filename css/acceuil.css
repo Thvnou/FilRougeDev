@@ -184,7 +184,7 @@ section.barre-recherche {
   width: 100%;
   box-sizing: border-box;
   padding: 0 35px;
-  background-color: rgba(2, 61, 188, 0.715);
+  background-color: rgb(182, 174, 63);
   border-radius: 10px;
 }
 
@@ -243,7 +243,7 @@ section.barre-recherche {
 
 .lien-tous-biens {
   display: inline-block;
-  background-color: rgb(241, 198, 141);
+  background-color: rgb(221, 197, 77);
   padding: 15px;
   border-radius: 16px;
   margin-top: 35px;

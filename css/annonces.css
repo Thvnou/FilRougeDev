@@ -1,0 +1,200 @@
+body {
+  margin: 0 auto;
+}
+
+/* menu de navigation */
+section.top-page {
+  display: flex;
+  align-items: center;
+  margin: 0 10vh;
+  justify-content: space-between;
+}
+
+section.top-page div.info p {
+  font-size: 17px;
+}
+
+nav.nav-top-page {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav.nav-top-page li {
+  margin: 15px;
+}
+
+/* Barre menu */
+header.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 31, 63);
+  padding: 10px 0;
+}
+
+.logo-barre-menu {
+  width: 100px;
+  margin-left: 10vh;
+}
+
+.info-utilisateur{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: -4px;
+  color: rgb(255, 255, 255);
+}
+
+/* css de la partie formulaire de recherche */
+
+.all-annonces {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(182, 174, 63);
+  border-radius: 30px;
+  width: 85%;
+  margin: 40px auto;
+  padding: 24px 32px 32px;
+  gap: 24px;
+  align-items: center;
+}
+
+.all-annonces h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.barre-recherche {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.formulaire-recherche {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+}
+
+.formulaire-recherche input,
+.formulaire-recherche select {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.bouton-trier {
+  padding: 12px 24px;
+  border: 1px solid #333;
+  background: rgb(57, 194, 225);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.bouton-trier:hover {
+  background: #333;
+  color: white;
+}
+
+/* css de la partie où y'a toutes les annonces */
+
+.annonces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.annonce-card {
+  background: #d0ccc8;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+}
+
+.annonce-photo {
+  height: 180px;
+}
+
+.annonce-photo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* recadre proprement sans déformer */
+}
+
+.annonce-prix-statut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: none;
+}
+
+.prix {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.prix small {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.statut {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #333;
+}
+
+.annonce-info {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  background-color: rgb(0, 31, 63);
+}
+.annonce-info span{
+  color: aliceblue;
+}
+
+.ville {
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.superficie {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.btn-contact {
+  margin-left: auto;
+  background: white;
+  border-radius: 6px;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 860px) {
+  .annonces-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .annonces-grid { grid-template-columns: 1fr; }
+  .formulaire-recherche { flex-direction: column; }
+  .barre-recherche { flex-direction: column; }
+}

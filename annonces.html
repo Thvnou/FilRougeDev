@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ymmo</title>
+    <link rel="stylesheet" href="css/annonces.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation de la page -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Mes favoris</li>
+        <li>Mon compte</li>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+
+      <div class="info-utilisateur">
+        <h1>YMMO Agence</h1>
+        <h3>visiteur</h3>
+      </div>
+    </header>
+
+    <!-- Toutes les annonces -->
+    <section class="all-annonces">
+      <h3>Nos annonces</h3>
+      <div class="barre-recherche">
+        <div class="formulaire-recherche">
+          <select>
+            <option value="acheter">Acheter</option>
+            <option value="louer">Louer</option>
+          </select>
+          <input type="text" placeholder="Où cherchez vous ?" />
+          <input type="text" placeholder="budget max" />
+          <input type="text" placeholder="m2 Minimum" />
+        </div>
+        <button class="bouton-trier">Trier</button>
+      </div>
+
+      <!-- Grille des annonces -->
+      <div class="annonces-grid">
+        <div class="annonce-card">
+          <div class="annonce-photo">
+            <img src="images/appart/appart-1.jpeg" alt="" />
+          </div>
+          <div class="annonce-prix-statut">
+            <span class="prix">250 000 € <small>par mois</small></span>
+            <span class="statut">À vendre</span>
+          </div>
+          <div class="annonce-info">
+            <span class="ville">Blois — Centre-ville</span>
+            <span class="superficie">36 m²</span>
+            <button class="btn-contact">✉</button>
+          </div>
+        </div>
+
+        <div class="annonce-card">
+          <div class="annonce-photo">
+            <img src="images/appart/appart-2.jpeg" alt="appartement 1" />
+          </div>
+          <div class="annonce-prix-statut">
+            <span class="prix">1500 € <small>par mois</small></span>
+            <span class="statut">LOCATION</span>
+          </div>
+          <div class="annonce-info">
+            <span class="ville">Senones</span>
+            <span class="superficie">29 m²</span>
+            <button class="btn-contact">✉</button>
+          </div>
+        </div>
+
+        <div class="annonce-card">
+          <div class="annonce-photo">
+            <img src="images/appart/appart-3.jpeg" alt="" />
+          </div>
+          <div class="annonce-prix-statut">
+            <span class="prix">380 000 € <small>par mois</small></span>
+            <span class="statut">À vendre</span>
+          </div>
+          <div class="annonce-info">
+            <span class="ville">Terville</span>
+            <span class="superficie">67 m²</span>
+            <button class="btn-contact">✉</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
