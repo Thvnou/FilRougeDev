@@ -74,18 +74,11 @@ header.menu {
   padding: 48px 10vh;
 }
 
-/* Avatar rond */
-.profil-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #d4d0cc;
-  flex-shrink: 0;
-}
+
 
 /* Bloc infos */
 .profil-infos {
-  background: #e4d150;
+  background: #ecedde;
   border-radius: 8px;
   padding: 24px 32px;
   flex: 1;
