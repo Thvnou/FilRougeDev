@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compte Client Ymmo</title>
+    <link rel="stylesheet" href="css/infos-candidature-bien.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation de la page -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <ul>
+          <li>Nos agences</li>
+          <li>Mes favoris</li>
+          <li>Mon compte</li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+      <div class="info-utilisateur">
+        <h1>Nom Prénom</h1>
+        <h3>Commercial</h3>
+      </div>
+      <button class="btn-deconnexion">Déconnexion</button>
+    </header>
+
+    <!-- Fiche bien -->
+    <div class="section-bien">
+      <div class="bien-photo-col">
+        <div class="bien-photo">Photo</div>
+        <div class="bien-reference-row">
+          <span class="bien-reference">référence</span>
+          <button class="btn-modifier">Modifier</button>
+        </div>
+      </div>
+      <div class="bien-infos">
+        <div class="info-row"><span class="label">Type de bien</span><span>—</span></div>
+        <div class="info-row"><span class="label">Catégorie</span><span>—</span></div>
+        <div class="info-row"><span class="label">Ville</span><span>—</span></div>
+        <div class="info-row"><span class="label">Superficie</span><span>—</span></div>
+        <div class="info-row"><span class="label">Prix / mois</span><span>—</span></div>
+        <div class="info-row"><span class="label">Nb de pièces</span><span>—</span></div>
+        <div class="info-row"><span class="label">Score énergétique</span><span>—</span></div>
+      </div>
+    </div>
+
+    <!-- Section candidatures -->
+    <div class="section-candidature">
+      <p class="candidats-label">les candidats :</p>
+
+      <!-- Candidat 1 -->
+      <div class="candidat-card">
+        <span class="candidat-nom">Nom prénom</span>
+        <div class="candidat-infos">
+          <ul>
+            <li>métier</li>
+            <li>salaire mensuel</li>
+            <li>email</li>
+            <li>numéro</li>
+          </ul>
+        </div>
+        <div class="candidat-actions">
+          <button class="btn-yn yes" onclick="toggle(this)">Y</button>
+          <button class="btn-yn no" onclick="toggle(this)">N</button>
+        </div>
+      </div>
+
+      <!-- Candidat 2 -->
+      <div class="candidat-card">
+        <span class="candidat-nom">Nom prénom</span>
+        <div class="candidat-infos">
+          <ul>
+            <li>métier</li>
+            <li>salaire mensuel</li>
+            <li>email</li>
+            <li>numéro</li>
+          </ul>
+        </div>
+        <div class="candidat-actions">
+          <button class="btn-yn yes" onclick="toggle(this)">Y</button>
+          <button class="btn-yn no" onclick="toggle(this)">N</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      function toggle(btn) {
+        btn.parentElement.querySelectorAll('.btn-yn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    </script>
+
+  </body>
+</html>

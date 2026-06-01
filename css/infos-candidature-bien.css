@@ -1,0 +1,206 @@
+body {
+  margin: 0 auto;
+}
+
+/* Barre de navigation */
+section.top-page {
+  display: flex;
+  align-items: center;
+  margin: 0 10vh;
+  justify-content: space-between;
+}
+
+section.top-page div.info p {
+  font-size: 17px;
+}
+
+nav.nav-top-page ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav.nav-top-page li {
+  margin: 15px;
+  cursor: pointer;
+}
+
+nav.nav-top-page li:hover {
+  text-decoration: underline;
+}
+
+/* Barre menu */
+header.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: rgb(0, 31, 63);
+  padding: 10px 0;
+}
+
+.logo-barre-menu {
+  width: 100px;
+  margin-left: 10vh;
+}
+
+.info-utilisateur {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+}
+
+.btn-deconnexion {
+  justify-self: end;
+  margin-right: 10vh;
+  padding: 8px 18px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-deconnexion:hover {
+  background: white;
+  color: rgb(0, 31, 63);
+}
+
+/* === Fiche bien === */
+.section-bien {
+  display: flex;
+  gap: 32px;
+  padding: 28px 10vh;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bien-photo-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 240px;
+}
+
+.bien-photo {
+  width: 240px;
+  height: 160px;
+  border: 2px solid #6aaadf;
+  border-radius: 4px;
+  background: #dce8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.bien-reference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bien-reference {
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.btn-modifier {
+  padding: 5px 14px;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.btn-modifier:hover {
+  background: #f0f0f0;
+}
+
+.bien-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.97rem;
+}
+
+.bien-infos .info-row {
+  display: flex;
+  gap: 8px;
+}
+
+.bien-infos .label {
+  font-weight: 600;
+  min-width: 140px;
+}
+
+/* === Candidatures === */
+.section-candidature {
+  padding: 16px 10vh 24px;
+}
+
+.candidats-label {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.candidat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.candidat-card:last-child {
+  border-bottom: none;
+}
+
+.candidat-nom {
+  min-width: 130px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding-top: 2px;
+}
+
+.candidat-infos {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.candidat-infos ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.candidat-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-yn {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #aaa;
+  background: #fff;
+  border-radius: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-yn.yes { border-color: #6abaaa; color: #2e8b7a; }
+.btn-yn.yes.active,
+.btn-yn.yes:hover { background: #6abaaa; color: #fff; }
+
+.btn-yn.no { border-color: #d9a0a0; color: #b44; }
+.btn-yn.no.active,
+.btn-yn.no:hover { background: #d9a0a0; color: #fff; }

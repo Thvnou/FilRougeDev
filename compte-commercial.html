@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compte Client Ymmo</title>
+    <link rel="stylesheet" href="css/compte-commercial.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation de la page -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Mes favoris</li>
+        <li>Mon compte</li>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+
+      <div class="info-utilisateur">
+        <h1>Nom Prénom</h1>
+        <h3>Commercial</h3>
+      </div>
+
+      <button class="btn-deconnexion">Déconnexion</button>
+    </header>
+
+    <!-- Dernières candidatures -->
+    <section class="candidatures">
+  <div class="candidatures-header">
+    <span class="candidatures-titre">Les dernières candidatures</span>
+    <div class="candidatures-tabs">
+      <button class="tab active">Résidentiel</button>
+      <button class="tab">Professionnel</button>
+    </div>
+  </div>
+
+  <div class="candidatures-grid">  <!-- ← manquait cette div -->
+
+    <div class="cand-card">
+      <div class="cand-photo">
+        <img src="images/appart/appart-1.jpeg" alt="photo du bien" />
+      </div>
+      <p class="cand-ref">référence</p>
+      <p class="cand-status">status du bien</p>
+    </div>
+
+    <div class="cand-card">
+      <div class="cand-photo">
+        <img src="images/appart/appart-2.jpeg" alt="photo du bien" />
+      </div>
+      <p class="cand-ref">référence</p>
+      <p class="cand-status">status du bien</p>
+    </div>
+
+    <div class="cand-card">
+      <div class="cand-photo">
+        <img src="images/appart/appart-3.jpeg" alt="photo du bien" />
+      </div>
+      <p class="cand-ref">référence</p>
+      <p class="cand-status">status du bien</p>
+    </div>
+
+  </div> 
+</section>
+
+    <script>
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
