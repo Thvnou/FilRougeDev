@@ -1,0 +1,155 @@
+body {
+  margin: 0 auto;
+}
+
+/* menu de navigation */
+section.top-page {
+  display: flex;
+  align-items: center;
+  margin: 0 10vh;
+  justify-content: space-between;
+}
+
+section.top-page div.info p {
+  font-size: 17px;
+}
+
+nav.nav-top-page {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav.nav-top-page li {
+  margin: 15px;
+}
+
+/* Barre menu */
+header.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 31, 63);
+  padding: 10px 0;
+}
+
+.logo-barre-menu {
+  width: 100px;
+  margin-left: 10vh;
+}
+
+.info-utilisateur {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: -4px;
+  color: rgb(255, 255, 255);
+}
+
+/* Bouton déconnexion */
+.btn-deconnexion {
+  justify-self: end;
+  margin-right: 12vh;
+  padding: 8px 18px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-deconnexion:hover {
+  background: white;
+  color: rgb(0, 31, 63);
+}
+
+/* ── Profil ── */
+.profil {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 10vh;
+}
+
+/* Avatar rond */
+.profil-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #d4d0cc;
+  flex-shrink: 0;
+}
+
+/* Bloc infos */
+.profil-infos {
+  background: #e4d150;
+  border-radius: 8px;
+  padding: 24px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profil-champs {
+  display: flex;
+  gap: 60px;
+}
+
+.colonne {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colonne p {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.valeur {
+  font-weight: 400;
+  color: #333;
+}
+
+/* Boutons d'action */
+.profil-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-modifier {
+  padding: 8px 20px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-modifier:hover {
+  background: #0000cc;
+}
+
+.btn-supprimer {
+  padding: 8px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-supprimer:hover {
+  background: #cc0000;
+}
