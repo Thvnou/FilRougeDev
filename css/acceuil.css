@@ -22,9 +22,9 @@ nav.nav-top-page{
   justify-content: space-between;
 }
 
-nav.nav-top-page li{
-  margin: 15px;
-  align-items: center;
+nav.nav-top-page a{
+  margin: 10px 40px;
+  align-items: center; 
 }
 
 
