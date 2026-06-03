@@ -1,12 +1,12 @@
 body {
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* menu de navigation */
+/* ── Barre de navigation ── */
 section.top-page {
   display: flex;
   align-items: center;
-  margin: 0 10vh;
+  padding: 0 5%;
   justify-content: space-between;
 }
 
@@ -21,36 +21,34 @@ nav.nav-top-page {
 }
 
 nav.nav-top-page li {
-  margin: 15px;
+  margin: 15px 12px;
 }
 
-/* Barre menu */
+/* ── Barre menu ── */
 header.menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   background-color: rgb(0, 31, 63);
   padding: 10px 0;
 }
 
 .logo-barre-menu {
   width: 100px;
-  margin-left: 10vh;
+  margin-left: 5%;
 }
 
 .info-utilisateur {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: -4px;
   color: rgb(255, 255, 255);
 }
 
-/* Bouton déconnexion */
+/* ── Bouton déconnexion ── */
 .btn-deconnexion {
   justify-self: end;
-  margin-right: 12vh;
+  margin-right: 5%;
   padding: 8px 18px;
   background: transparent;
   color: white;
@@ -69,12 +67,10 @@ header.menu {
 /* ── Profil ── */
 .profil {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
-  padding: 48px 10vh;
+  padding: 48px 5%;
 }
-
-
 
 /* Bloc infos */
 .profil-infos {
@@ -90,12 +86,14 @@ header.menu {
 .profil-champs {
   display: flex;
   gap: 60px;
+  flex-wrap: wrap;
 }
 
 .colonne {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 180px;
 }
 
 .colonne p {
@@ -117,6 +115,7 @@ header.menu {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn-modifier {
@@ -145,4 +144,38 @@ header.menu {
 
 .btn-supprimer:hover {
   background: #cc0000;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 700px) {
+  .profil {
+    padding: 28px 4%;
+    flex-direction: column;
+  }
+
+  .profil-infos {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .profil-champs {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  section.top-page {
+    display: none;
+  }
+
+  .logo-barre-menu {
+    width: 75px;
+    margin-left: 4%;
+  }
+
+  .btn-deconnexion {
+    margin-right: 4%;
+  }
 }

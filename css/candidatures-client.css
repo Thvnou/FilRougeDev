@@ -1,12 +1,12 @@
 body {
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* menu de navigation */
+/* ── Barre de navigation ── */
 section.top-page {
   display: flex;
   align-items: center;
-  margin: 0 10vh;
+  padding: 0 5%;
   justify-content: space-between;
 }
 
@@ -21,36 +21,34 @@ nav.nav-top-page {
 }
 
 nav.nav-top-page li {
-  margin: 15px;
+  margin: 15px 12px;
 }
 
-/* Barre menu */
+/* ── Barre menu ── */
 header.menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   background-color: rgb(0, 31, 63);
   padding: 10px 0;
 }
 
 .logo-barre-menu {
   width: 100px;
-  margin-left: 10vh;
+  margin-left: 5%;
 }
 
 .info-utilisateur {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: -4px;
   color: rgb(255, 255, 255);
 }
 
-/* Bouton déconnexion */
+/* ── Bouton déconnexion ── */
 .btn-deconnexion {
   justify-self: end;
-  margin-right: 12vh;
+  margin-right: 5%;
   padding: 8px 18px;
   background: transparent;
   color: white;
@@ -68,7 +66,7 @@ header.menu {
 
 /* ── Section candidatures ── */
 .candidatures {
-  padding: 36px 10vh;
+  padding: 36px 5%;
 }
 
 .candidatures-header {
@@ -76,6 +74,8 @@ header.menu {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .candidatures-titre {
@@ -148,7 +148,7 @@ header.menu {
 .annonce-photo img {
   width: 100%;
   height: 180px;
-  object-fit: cover; /* recadre proprement sans déformer */
+  object-fit: cover;
 }
 
 .annonce-prix-statut {
@@ -157,7 +157,6 @@ header.menu {
   align-items: center;
   padding: 8px 12px;
   background: #ffffff;
-  border: none;
 }
 
 .prix {
@@ -185,7 +184,8 @@ header.menu {
   gap: 8px;
   background-color: rgb(0, 31, 63);
 }
-.annonce-info span{
+
+.annonce-info span {
   color: aliceblue;
 }
 
@@ -197,19 +197,37 @@ header.menu {
 
 .superficie {
   font-size: 0.85rem;
-  color: #555;
+  color: #aaa;
 }
 
+/* ===== RESPONSIVE ===== */
 
-
-/* Responsive */
-@media (max-width: 700px) {
+@media (max-width: 860px) {
+  .annonces-grid,
   .candidatures-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 600px) {
+  section.top-page {
+    display: none;
+  }
+
+  .logo-barre-menu {
+    width: 75px;
+    margin-left: 4%;
+  }
+
+  .btn-deconnexion {
+    margin-right: 4%;
+  }
+
+  .candidatures {
+    padding: 24px 4%;
+  }
+
+  .annonces-grid,
   .candidatures-grid {
     grid-template-columns: 1fr;
   }

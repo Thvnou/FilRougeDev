@@ -1,12 +1,12 @@
 body {
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* menu de navigation */
+/* ── Barre de navigation ── */
 section.top-page {
   display: flex;
   align-items: center;
-  margin: 0 10vh;
+  padding: 0 5%;
   justify-content: space-between;
 }
 
@@ -21,36 +21,34 @@ nav.nav-top-page {
 }
 
 nav.nav-top-page li {
-  margin: 15px;
+  margin: 15px 12px;
 }
 
-/* Barre menu */
+/* ── Barre menu ── */
 header.menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   background-color: rgb(0, 31, 63);
   padding: 10px 0;
 }
 
 .logo-barre-menu {
   width: 100px;
-  margin-left: 10vh;
+  margin-left: 5%;
 }
 
 .info-utilisateur {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: -4px;
   color: rgb(255, 255, 255);
 }
 
-/* Bouton déconnexion */
+/* ── Bouton déconnexion ── */
 .btn-deconnexion {
   justify-self: end;
-  margin-right: 12vh;
+  margin-right: 5%;
   padding: 8px 18px;
   background: transparent;
   color: white;
@@ -66,97 +64,9 @@ header.menu {
   color: rgb(0, 31, 63);
 }
 
-/* ── Profil ── */
-.profil {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  padding: 48px 10vh;
-}
-
-/* Avatar rond */
-.profil-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #d4d0cc;
-  flex-shrink: 0;
-}
-
-/* Bloc infos */
-.profil-infos {
-  background: #d4d0cc;
-  border-radius: 8px;
-  padding: 24px 32px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.profil-champs {
-  display: flex;
-  gap: 60px;
-}
-
-.colonne {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.colonne p {
-  font-size: 0.95rem;
-  color: #1a1a1a;
-}
-
-.label {
-  font-weight: 600;
-}
-
-.valeur {
-  font-weight: 400;
-  color: #333;
-}
-
-/* Boutons d'action */
-.profil-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn-modifier {
-  padding: 8px 20px;
-  background: blue;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.88rem;
-  cursor: pointer;
-}
-
-.btn-modifier:hover {
-  background: #0000cc;
-}
-
-.btn-supprimer {
-  padding: 8px 20px;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.88rem;
-  cursor: pointer;
-}
-
-.btn-supprimer:hover {
-  background: #cc0000;
-}
-
 /* ── Dernières candidatures ── */
 .candidatures {
-  padding: 40px 10vh;
+  padding: 40px 5%;
 }
 
 .candidatures-header {
@@ -164,6 +74,8 @@ header.menu {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .candidatures-titre {
@@ -211,11 +123,14 @@ header.menu {
   border: 1.5px solid #aaa;
   border-radius: 6px;
   height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.88rem;
-  color: #555;
+  overflow: hidden;
+}
+
+.cand-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .cand-ref,
@@ -226,17 +141,33 @@ header.menu {
   padding-left: 2px;
 }
 
-.cand-photo {
-  background: #d4d0cc;
-  border: 1.5px solid #aaa;
-  border-radius: 6px;
-  height: 180px; /* ← indispensable pour contraindre l'image */
-  overflow: hidden; /* ← empêche l'image de déborder */
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 860px) {
+  .candidatures-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.cand-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
+@media (max-width: 600px) {
+  section.top-page {
+    display: none;
+  }
+
+  .logo-barre-menu {
+    width: 75px;
+    margin-left: 4%;
+  }
+
+  .btn-deconnexion {
+    margin-right: 4%;
+  }
+
+  .candidatures {
+    padding: 24px 4%;
+  }
+
+  .candidatures-grid {
+    grid-template-columns: 1fr;
+  }
 }

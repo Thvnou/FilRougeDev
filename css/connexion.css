@@ -1,12 +1,12 @@
 body {
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* menu de navigation */
+/* ── Barre de navigation ── */
 section.top-page {
   display: flex;
   align-items: center;
-  margin: 0 10vh;
+  padding: 0 5%;
   justify-content: space-between;
 }
 
@@ -21,40 +21,39 @@ nav.nav-top-page {
 }
 
 nav.nav-top-page li {
-  margin: 15px;
+  margin: 15px 12px;
 }
 
-/* Barre menu */
+/* ── Barre menu ── */
 header.menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
   background-color: rgb(0, 31, 63);
   padding: 10px 0;
 }
 
 .logo-barre-menu {
   width: 100px;
-  margin-left: 10vh;
+  margin-left: 5%;
 }
 
-
-.info-utilisateur{
+.info-utilisateur {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: -4px;
   color: aliceblue;
 }
 
-
+/* ── Formulaire connexion ── */
 .fenetre_connexion {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - 120px);
+  padding: 40px 16px;
   background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
 .formulaire-connexion {
@@ -66,7 +65,9 @@ header.menu {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
 }
 
 .formulaire-connexion h2 {
@@ -111,4 +112,21 @@ header.menu {
 
 .formulaire-connexion a:hover {
   text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+  section.top-page {
+    display: none;
+  }
+
+  .logo-barre-menu {
+    width: 75px;
+    margin-left: 4%;
+  }
+
+  .formulaire-connexion {
+    padding: 28px 20px;
+  }
 }
