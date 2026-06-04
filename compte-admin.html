@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ymmo — Administration</title>
+    <link rel="stylesheet" href="css/compte-admin.css" />
+  </head>
+
+  <body>
+
+    <!-- Barre de navigation -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <a href="">Nos agences</a>
+        <a href="">Mes favoris</a>
+        <a href="">Mon compte</a>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+      <div class="info-utilisateur">
+        <h1>NOM Prénom</h1>
+        <h3>Compte Administrateur</h3>
+      </div>
+      <button class="btn-deconnexion">Déconnexion</button>
+    </header>
+
+    <!-- Corps de la page admin -->
+    <main class="admin-wrapper">
+
+      <h2 class="admin-titre">Tableau de bord</h2>
+
+      <!-- ── KPI Cards ── -->
+      <section class="kpi-grid">
+
+        <div class="kpi-card">
+          <div class="kpi-icon">🏠</div>
+          <div class="kpi-body">
+            <span class="kpi-valeur">24</span>
+            <span class="kpi-label">Biens publiés</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">📬</div>
+          <div class="kpi-body">
+            <span class="kpi-valeur">87</span>
+            <span class="kpi-label">Candidatures reçues</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">👤</div>
+          <div class="kpi-body">
+            <span class="kpi-valeur">142</span>
+            <span class="kpi-label">Clients inscrits</span>
+          </div>
+        </div>
+
+        <div class="kpi-card kpi-card--accent">
+          <div class="kpi-icon">✅</div>
+          <div class="kpi-body">
+            <span class="kpi-valeur">11</span>
+            <span class="kpi-label">Biens vendus / loués ce mois</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── Tableau des annonces ── -->
+      <section class="admin-section">
+        <div class="section-header">
+          <h3>Annonces publiées</h3>
+          <span class="badge">24 biens</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Ville</th>
+                <th>Type</th>
+                <th>Prix</th>
+                <th>Statut</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="images/appart/appart-1.jpeg" alt="bien" class="table-photo" /></td>
+                <td>Blois — Centre-ville</td>
+                <td>Vente</td>
+                <td>250 000 €</td>
+                <td><span class="tag tag--vente">À vendre</span></td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/appart/appart-2.jpeg" alt="bien" class="table-photo" /></td>
+                <td>Senones</td>
+                <td>Location</td>
+                <td>1 500 € / mois</td>
+                <td><span class="tag tag--location">Location</span></td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/appart/appart-3.jpeg" alt="bien" class="table-photo" /></td>
+                <td>Terville</td>
+                <td>Vente</td>
+                <td>380 000 €</td>
+                <td><span class="tag tag--vendu">Vendu</span></td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/appart/appart-1.jpeg" alt="bien" class="table-photo" /></td>
+                <td>Paris — 11e</td>
+                <td>Location</td>
+                <td>900 € / mois</td>
+                <td><span class="tag tag--location">Location</span></td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/appart/appart-2.jpeg" alt="bien" class="table-photo" /></td>
+                <td>Bordeaux</td>
+                <td>Vente</td>
+                <td>540 000 €</td>
+                <td><span class="tag tag--vente">À vendre</span></td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Tableau des utilisateurs ── -->
+      <section class="admin-section">
+        <div class="section-header">
+          <h3>Utilisateurs inscrits</h3>
+          <span class="badge">142 comptes</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Inscrit le</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dupont</td>
+                <td>Jean</td>
+                <td>jean.dupont@email.com</td>
+                <td><span class="tag tag--client">Client</span></td>
+                <td>12/01/2025</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Martin</td>
+                <td>Sophie</td>
+                <td>s.martin@ymmo.fr</td>
+                <td><span class="tag tag--commercial">Commercial</span></td>
+                <td>03/09/2024</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bernard</td>
+                <td>Lucie</td>
+                <td>lucie.b@email.com</td>
+                <td><span class="tag tag--client">Client</span></td>
+                <td>28/02/2025</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Lefevre</td>
+                <td>Marc</td>
+                <td>marc.lefevre@ymmo.fr</td>
+                <td><span class="tag tag--commercial">Commercial</span></td>
+                <td>15/06/2024</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Moreau</td>
+                <td>Clara</td>
+                <td>clara.moreau@email.com</td>
+                <td><span class="tag tag--client">Client</span></td>
+                <td>05/04/2025</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Petit</td>
+                <td>Antoine</td>
+                <td>a.petit@email.com</td>
+                <td><span class="tag tag--client">Client</span></td>
+                <td>18/03/2025</td>
+                <td>
+                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      function supprimerLigne(btn) {
+        const ligne = btn.closest('tr');
+        ligne.style.transition = 'opacity 0.3s';
+        ligne.style.opacity = '0';
+        setTimeout(() => ligne.remove(), 300);
+      }
+    </script>
+
+  </body>
+</html>
