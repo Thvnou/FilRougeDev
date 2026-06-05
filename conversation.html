@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ymmo — Conversation</title>
+    <link rel="stylesheet" href="css/conversation.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Mes favoris</li>
+        <li>Mon compte</li>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+      <div class="info-utilisateur">
+        <h1>Nom Prénom</h1>
+        <h3>Client</h3>
+      </div>
+      <button class="btn-deconnexion">Déconnexion</button>
+    </header>
+
+    <!-- Fil de conversation -->
+    <main class="conv-wrapper">
+
+      <!-- En-tête de la conversation -->
+      <div class="conv-entete">
+        <a href="messages.html" class="btn-retour">&#8592; Messages</a>
+        <div class="conv-contact">
+          <div class="contact-avatar">MA</div>
+          <div class="contact-info">
+            <span class="contact-nom">Marie Angers</span>
+            <span class="contact-detail">Agent — Appartement Paris 11e</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="messages-fil">
+
+        <!-- Séparateur de date -->
+        <div class="separateur-date"><span>Mercredi 4 juin 2026</span></div>
+
+        <!-- Message reçu -->
+        <div class="message recu">
+          <div class="msg-avatar">MA</div>
+          <div class="msg-bulle">
+            <p>Bonjour, j'ai bien reçu votre dossier de candidature pour l'appartement au 14 rue de la Roquette. Pourriez-vous nous envoyer également votre dernier avis d'imposition ?</p>
+            <span class="msg-heure">09:04</span>
+          </div>
+        </div>
+
+        <!-- Message envoyé -->
+        <div class="message envoye">
+          <div class="msg-bulle">
+            <p>Bonjour Marie, bien sûr ! Je vous transmets le document dès ce soir.</p>
+            <span class="msg-heure">09:48</span>
+          </div>
+        </div>
+
+        <!-- Message reçu -->
+        <div class="message recu">
+          <div class="msg-avatar">MA</div>
+          <div class="msg-bulle">
+            <p>Parfait, merci beaucoup. Nous reviendrons vers vous dans les 48h suivant la réception.</p>
+            <span class="msg-heure">10:12</span>
+          </div>
+        </div>
+
+        <!-- Séparateur de date -->
+        <div class="separateur-date"><span>Aujourd'hui — 5 juin 2026</span></div>
+
+        <!-- Message reçu -->
+        <div class="message recu">
+          <div class="msg-avatar">MA</div>
+          <div class="msg-bulle">
+            <p>Bonjour, j'ai bien reçu votre avis d'imposition. Votre dossier est complet, il sera présenté au propriétaire cette semaine.</p>
+            <span class="msg-heure">14:32</span>
+          </div>
+        </div>
+
+        <!-- Message reçu -->
+        <div class="message recu">
+          <div class="msg-avatar">MA</div>
+          <div class="msg-bulle">
+            <p>Pourriez-vous également confirmer vos disponibilités pour une visite la semaine prochaine ?</p>
+            <span class="msg-heure">14:33</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Zone de saisie -->
+      <form class="saisie-form">
+        <textarea
+          class="saisie-input"
+          placeholder="Écrire un message..."
+          rows="1"
+        ></textarea>
+        <button type="submit" class="btn-envoyer">Envoyer</button>
+      </form>
+
+    </main>
+  </body>
+</html>

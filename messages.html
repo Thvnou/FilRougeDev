@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ymmo — Messages</title>
+    <link rel="stylesheet" href="css/messages.css" />
+  </head>
+
+  <body>
+    <!-- Barre de navigation -->
+    <section class="top-page">
+      <div class="info">
+        <p>12 agences sur toute la France</p>
+      </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Mes favoris</li>
+        <li>Mon compte</li>
+      </nav>
+    </section>
+
+    <!-- Barre menu -->
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo du site" class="logo-barre-menu" />
+      <div class="info-utilisateur">
+        <h1>Nom Prénom</h1>
+        <h3>Client</h3>
+      </div>
+      <button class="btn-deconnexion">Déconnexion</button>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="messages-wrapper">
+
+      <div class="messages-header">
+        <a href="compte-client.html" class="btn-retour">&#8592; Retour</a>
+        <h2 class="messages-titre">Mes messages</h2>
+      </div>
+
+
+      <!-- Liste des conversations -->
+      <ul class="conversations-liste">
+
+        <!-- Conversation 1 — non lue -->
+        <li class="conversation-item non-lue">
+          <a href="conversation.html" class="conversation-lien">
+            <div class="conv-avatar">MA</div>
+            <div class="conv-corps">
+              <div class="conv-top">
+                <span class="conv-nom">Marie Angers — Appartement Paris 11e</span>
+                <span class="conv-date">Aujourd'hui, 14:32</span>
+              </div>
+              <div class="conv-bas">
+                <span class="conv-apercu">Bonjour, j'ai bien reçu votre dossier. Pourriez-vous nous envoyer…</span>
+                <span class="conv-badge">2</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- Conversation 2 -->
+        <li class="conversation-item">
+          <a href="conversation.html" class="conversation-lien">
+            <div class="conv-avatar">TL</div>
+            <div class="conv-corps">
+              <div class="conv-top">
+                <span class="conv-nom">Thomas Laurent — Studio Lyon 6e</span>
+                <span class="conv-date">Hier, 09:15</span>
+              </div>
+              <div class="conv-bas">
+                <span class="conv-apercu">Merci pour votre retour, nous reviendrons vers vous rapidement.</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </main>
+  </body>
+</html>
