@@ -64,6 +64,20 @@ header.menu {
   color: rgb(0, 31, 63);
 }
 
+/* ── Bouton retour ── */
+.btn-retour {
+  display: inline-block;
+  margin: 20px 5% 0;
+  color: rgb(0, 31, 63);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-retour:hover {
+  text-decoration: underline;
+}
+
 /* ── Profil ── */
 .profil {
   display: flex;
