@@ -12,8 +12,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -21,6 +21,16 @@ app.add_middleware(
 ai_engine = YmmoAIEngine()
 
 # --- MODÈLES DE DONNÉES (Pydantic) ---
+class LoginInput(BaseModel):
+    email: str
+    password: str
+
+class UserCreateInput(BaseModel):
+    firstname: str
+    lastname: str
+    email: str
+    password: str
+
 class PropertyEstimateInput(BaseModel):
     area: int
     rooms: int
@@ -41,6 +51,45 @@ class PropertyCreateInput(BaseModel):
 def health_check():
     return {"status": "healthy", "message": "API YMMO en ligne et prête pour le Frontend."}
 
+@app.post("/api/login")
+def login(data: LoginInput):
+    """Vérifie les identifiants et retourne les infos de l'utilisateur connecté"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT id, firstname, lastname, role FROM users WHERE email = %s AND password = %s",
+        (data.email, data.password)
+    )
+    user = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    if not user:
+        raise HTTPException(status_code=401, detail="Email ou mot de passe incorrect")
+    return {"status": "success", "user": dict(user)}
+
+@app.post("/api/users")
+def create_user(data: UserCreateInput):
+    """Crée un nouveau compte client depuis le formulaire d'inscription"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            """
+            INSERT INTO users (firstname, lastname, email, password, role)
+            VALUES (%s, %s, %s, %s, 'client') RETURNING id;
+            """,
+            (data.firstname, data.lastname, data.email, data.password)
+        )
+        new_id = cursor.fetchone()['id']
+        conn.commit()
+        return {"status": "success", "message": "Compte créé avec succès", "user_id": new_id}
+    except Exception as e:
+        conn.rollback()
+        raise HTTPException(status_code=400, detail=str(e))
+    finally:
+        cursor.close()
+        conn.close()
+
 @app.get("/api/properties")
 def get_all_properties():
     """Récupère la liste de tous les biens immobiliers (disponibles et vendus)"""
@@ -51,6 +100,19 @@ def get_all_properties():
     cursor.close()
     conn.close()
     return properties
+
+@app.get("/api/properties/{property_id}")
+def get_property(property_id: int):
+    """Récupère un seul bien par son ID pour la page de description"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM property WHERE id = %s;", (property_id,))
+    prop = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    if not prop:
+        raise HTTPException(status_code=404, detail="Bien introuvable")
+    return prop
 
 @app.post("/api/properties")
 def create_property(property: PropertyCreateInput):

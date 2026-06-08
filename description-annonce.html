@@ -37,10 +37,10 @@
 
       <div class="detail-gauche">
         <div class="detail-photo">
-          <img src="images/annonces/photo1.jpg" alt="photo du bien" />
+          <img id="detail-img" src="images/appart/appart-1.jpeg" alt="photo du bien" />
         </div>
         <div class="detail-bas">
-          <span class="reference">Réf. 00123</span>
+          <span class="reference" id="detail-ref">Réf. —</span>
           <button class="btn-candidature">J'envoie ma candidature</button>
         </div>
       </div>
@@ -49,27 +49,27 @@
         <div class="detail-info">
           <div class="info-ligne">
             <span class="info-label">Type de bien</span>
-            <span class="info-valeur">Appartement</span>
+            <span class="info-valeur" id="detail-type">—</span>
           </div>
           <div class="info-ligne">
             <span class="info-label">Catégorie</span>
-            <span class="info-valeur">Location</span>
+            <span class="info-valeur" id="detail-category">—</span>
           </div>
           <div class="info-ligne">
             <span class="info-label">Ville</span>
-            <span class="info-valeur">Blois — Centre-ville</span>
+            <span class="info-valeur" id="detail-city">—</span>
           </div>
           <div class="info-ligne">
             <span class="info-label">Superficie</span>
-            <span class="info-valeur">36 m²</span>
+            <span class="info-valeur" id="detail-area">—</span>
           </div>
           <div class="info-ligne">
-            <span class="info-label">Prix / mois</span>
-            <span class="info-valeur">480 €</span>
+            <span class="info-label">Prix</span>
+            <span class="info-valeur" id="detail-price">—</span>
           </div>
           <div class="info-ligne">
             <span class="info-label">Nb de pièces</span>
-            <span class="info-valeur">2</span>
+            <span class="info-valeur" id="detail-rooms">—</span>
           </div>
           <div class="info-ligne">
             <span class="info-label">Score énergétique</span>
@@ -79,6 +79,33 @@
       </div>
 
     </section>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const img = params.get('img');
+      const id  = params.get('id');
+
+      // 1. Affiche immédiatement la photo transmise depuis la page annonces
+      if (img) {
+        document.getElementById('detail-img').src = img;
+      }
+
+      // 2. Récupère les données texte du bien depuis l'API
+      if (id) {
+        fetch(`http://localhost:8000/api/properties/${id}`)
+          .then(res => res.json())
+          .then(p => {
+            document.getElementById('detail-ref').textContent      = `Réf. ${String(p.id).padStart(5, '0')}`;
+            document.getElementById('detail-type').textContent     = p.type;
+            document.getElementById('detail-category').textContent = p.category;
+            document.getElementById('detail-city').textContent     = p.city;
+            document.getElementById('detail-area').textContent     = `${p.area} m²`;
+            document.getElementById('detail-price').textContent    = `${p.price.toLocaleString('fr-FR')} €`;
+            document.getElementById('detail-rooms').textContent    = p.rooms;
+          })
+          .catch(() => console.error('Impossible de charger les données du bien'));
+      }
+    </script>
 
   </body>
 </html>

@@ -43,3 +43,29 @@ CREATE TABLE transactions (
     FOREIGN KEY (property_id) REFERENCES property(id) ON DELETE RESTRICT,
     FOREIGN KEY (buyer_id) REFERENCES users(id) ON DELETE RESTRICT
 );
+
+CREATE TABLE candidatures (
+    id SERIAL PRIMARY KEY,
+    property_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    metier VARCHAR(100),
+    salaire INTEGER,
+    telephone VARCHAR(20),
+    status VARCHAR(30) NOT NULL DEFAULT 'en attente',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (property_id) REFERENCES property(id) ON DELETE RESTRICT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE messages (
+    id SERIAL PRIMARY KEY,
+    sender_id INTEGER NOT NULL,
+    receiver_id INTEGER NOT NULL,
+    property_id INTEGER,
+    content TEXT NOT NULL,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_read BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE RESTRICT,
+    FOREIGN KEY (receiver_id) REFERENCES users(id) ON DELETE RESTRICT,
+    FOREIGN KEY (property_id) REFERENCES property(id) ON DELETE SET NULL
+);
