@@ -1,0 +1,22 @@
+# --- CACHES PYTHON ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+
+# --- CONFIGURATIONS SYSTÈME ET IDE ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- DOCKER ---
+.docker/
+# On ignore les fichiers d'environnement locaux s'ils contiennent des mots de passe secrets
+.env
+
+# --- DONNÉES / LOGS ---
+*.log

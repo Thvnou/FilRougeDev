@@ -1,0 +1,45 @@
+CREATE TABLE agences (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    postcode VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role VARCHAR(30) NOT NULL,
+    id_agence INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_agence) REFERENCES agences(id) ON DELETE SET NULL
+);
+
+CREATE TABLE property (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description TEXT NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    price INTEGER NOT NULL,
+    area INTEGER NOT NULL,
+    rooms INTEGER NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    postcode VARCHAR(10) NOT NULL,
+    user_id INTEGER NOT NULL,
+    status VARCHAR(30) NOT NULL DEFAULT 'Disponible',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE transactions (
+    id SERIAL PRIMARY KEY,
+    property_id INTEGER NOT NULL UNIQUE,
+    buyer_id INTEGER NOT NULL,
+    final_price INTEGER NOT NULL,
+    sold_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (property_id) REFERENCES property(id) ON DELETE RESTRICT,
+    FOREIGN KEY (buyer_id) REFERENCES users(id) ON DELETE RESTRICT
+);
