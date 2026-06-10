@@ -15,9 +15,9 @@
       </div>
       <nav class="nav-top-page">
         <ul>
-          <li>Nos agences</li>
-          <li>Mes favoris</li>
-          <li>Mon compte</li>
+          <li id="nav-agences">Nos agences</li>
+          <li id="nav-favoris">Mes favoris</li>
+          <li id="nav-compte">Mon compte</li>
         </ul>
       </nav>
     </section>
@@ -58,49 +58,14 @@
     <!-- Section candidatures -->
     <div class="section-candidature">
       <p class="candidats-label">les candidats :</p>
-
-      <!-- Candidat 1 -->
-      <div class="candidat-card">
-        <span class="candidat-nom">Nom prénom</span>
-        <div class="candidat-infos">
-          <ul>
-            <li>métier</li>
-            <li>salaire mensuel</li>
-            <li>email</li>
-            <li>numéro</li>
-          </ul>
-        </div>
-        <div class="candidat-actions">
-          <button class="btn-yn yes" onclick="toggle(this)">Y</button>
-          <button class="btn-yn no" onclick="toggle(this)">N</button>
-        </div>
-      </div>
-
-      <!-- Candidat 2 -->
-      <div class="candidat-card">
-        <span class="candidat-nom">Nom prénom</span>
-        <div class="candidat-infos">
-          <ul>
-            <li>métier</li>
-            <li>salaire mensuel</li>
-            <li>email</li>
-            <li>numéro</li>
-          </ul>
-        </div>
-        <div class="candidat-actions">
-          <button class="btn-yn yes" onclick="toggle(this)">Y</button>
-          <button class="btn-yn no" onclick="toggle(this)">N</button>
-        </div>
-      </div>
-
     </div>
 
-    <script>
-      function toggle(btn) {
-        btn.parentElement.querySelectorAll('.btn-yn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      }
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/infos-candidature.js"></script>
 
   </body>
 </html>

@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -42,44 +42,78 @@
     </div>
   </div>
 
-  <div class="candidatures-grid">  <!-- ← manquait cette div -->
-
-    <div class="cand-card">
-      <div class="cand-photo">
-        <img src="images/appart/appart-1.jpeg" alt="photo du bien" />
-      </div>
-      <p class="cand-ref">référence</p>
-      <p class="cand-status">status du bien</p>
-    </div>
-
-    <div class="cand-card">
-      <div class="cand-photo">
-        <img src="images/appart/appart-2.jpeg" alt="photo du bien" />
-      </div>
-      <p class="cand-ref">référence</p>
-      <p class="cand-status">status du bien</p>
-    </div>
-
-    <div class="cand-card">
-      <div class="cand-photo">
-        <img src="images/appart/appart-3.jpeg" alt="photo du bien" />
-      </div>
-      <p class="cand-ref">référence</p>
-      <p class="cand-status">status du bien</p>
-    </div>
-
-  </div> 
+  <div class="candidatures-grid">
+    <p>Chargement des candidatures...</p>
+  </div>
 </section>
 
-    <script>
-      document.querySelectorAll(".tab").forEach((tab) => {
-        tab.addEventListener("click", () => {
-          document
-            .querySelectorAll(".tab")
-            .forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-        });
-      });
-    </script>
+    <!-- Ajouter un bien -->
+    <section class="ajouter-bien">
+      <h2 class="ajouter-bien-titre">Ajouter un nouveau bien</h2>
+
+      <form class="form-bien">
+        <div class="form-row">
+          <label for="bien-titre">Titre</label>
+          <input type="text" id="bien-titre" required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-description">Description</label>
+          <textarea id="bien-description" rows="3" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="bien-categorie">Catégorie</label>
+          <select id="bien-categorie">
+            <option value="Résidentiel">Résidentiel</option>
+            <option value="Professionnel">Professionnel</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="bien-type">Type de bien</label>
+          <input type="text" id="bien-type" placeholder="Maison, Appartement, Bureau..." required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-ville">Ville</label>
+          <input type="text" id="bien-ville" required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-cp">Code postal</label>
+          <input type="text" id="bien-cp" required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-surface">Superficie (m²)</label>
+          <input type="number" id="bien-surface" min="1" required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-pieces">Nombre de pièces</label>
+          <input type="number" id="bien-pieces" min="1" required />
+        </div>
+
+        <div class="form-row">
+          <label for="bien-prix">Prix (€)</label>
+          <div class="prix-row">
+            <input type="number" id="bien-prix" min="0" required />
+            <button type="button" id="btn-estimer-prix">Estimer avec l'IA</button>
+          </div>
+        </div>
+
+        <p id="ajouter-bien-message" class="message-info" style="display:none;"></p>
+
+        <button type="submit" class="btn-publier">Publier l'annonce</button>
+      </form>
+    </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/compte-commercial.js"></script>
   </body>
 </html>

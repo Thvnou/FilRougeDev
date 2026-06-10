@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -36,11 +36,18 @@
 <section class="fenetre_connexion">
   <div class="formulaire-connexion">
     <h2>Connexion</h2>
-    <input type="email" placeholder="Email" />
-    <input type="password" placeholder="Mot de passe" />
-    <button class="bouton-connexion">Connexion</button>
+    <p id="connexion-error" class="message-erreur" style="display:none;"></p>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button class="bouton-connexion" type="button">Connexion</button>
     <a href="creation-compte.html">Créer un compte</a>
   </div>
 </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/connexion.js"></script>
   </body>
 </html>

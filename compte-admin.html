@@ -15,9 +15,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <a href="">Nos agences</a>
-        <a href="">Mes favoris</a>
-        <a href="">Mon compte</a>
+        <a href="#" id="nav-agences">Nos agences</a>
+        <a href="#" id="nav-favoris">Mes favoris</a>
+        <a href="#" id="nav-compte">Mon compte</a>
       </nav>
     </section>
 
@@ -94,54 +94,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><img src="images/appart/appart-11.jpeg" alt="bien" class="table-photo" /></td>
-                <td>Blois — Centre-ville</td>
-                <td>Vente</td>
-                <td>250 000 €</td>
-                <td><span class="tag tag--vente">À vendre</span></td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td><img src="images/appart/appart-2.jpeg" alt="bien" class="table-photo" /></td>
-                <td>Senones</td>
-                <td>Location</td>
-                <td>1 500 € / mois</td>
-                <td><span class="tag tag--location">Location</span></td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td><img src="images/appart/appart-3.jpeg" alt="bien" class="table-photo" /></td>
-                <td>Terville</td>
-                <td>Vente</td>
-                <td>380 000 €</td>
-                <td><span class="tag tag--vendu">Vendu</span></td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td><img src="images/appart/appart-1.jpeg" alt="bien" class="table-photo" /></td>
-                <td>Paris — 11e</td>
-                <td>Location</td>
-                <td>900 € / mois</td>
-                <td><span class="tag tag--location">Location</span></td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td><img src="images/appart/appart-2.jpeg" alt="bien" class="table-photo" /></td>
-                <td>Bordeaux</td>
-                <td>Vente</td>
-                <td>540 000 €</td>
-                <td><span class="tag tag--vente">À vendre</span></td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
+                <td colspan="6">Chargement des annonces...</td>
               </tr>
             </tbody>
           </table>
@@ -169,64 +122,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Dupont</td>
-                <td>Jean</td>
-                <td>jean.dupont@email.com</td>
-                <td><span class="tag tag--client">Client</span></td>
-                <td>12/01/2025</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Martin</td>
-                <td>Sophie</td>
-                <td>s.martin@ymmo.fr</td>
-                <td><span class="tag tag--commercial">Commercial</span></td>
-                <td>03/09/2024</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Bernard</td>
-                <td>Lucie</td>
-                <td>lucie.b@email.com</td>
-                <td><span class="tag tag--client">Client</span></td>
-                <td>28/02/2025</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Lefevre</td>
-                <td>Marc</td>
-                <td>marc.lefevre@ymmo.fr</td>
-                <td><span class="tag tag--commercial">Commercial</span></td>
-                <td>15/06/2024</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Moreau</td>
-                <td>Clara</td>
-                <td>clara.moreau@email.com</td>
-                <td><span class="tag tag--client">Client</span></td>
-                <td>05/04/2025</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Petit</td>
-                <td>Antoine</td>
-                <td>a.petit@email.com</td>
-                <td><span class="tag tag--client">Client</span></td>
-                <td>18/03/2025</td>
-                <td>
-                  <button class="btn-table btn-suppr" onclick="supprimerLigne(this)">Supprimer</button>
-                </td>
+                <td colspan="6">Chargement des utilisateurs...</td>
               </tr>
             </tbody>
           </table>
@@ -235,14 +131,12 @@
 
     </main>
 
-    <script>
-      function supprimerLigne(btn) {
-        const ligne = btn.closest('tr');
-        ligne.style.transition = 'opacity 0.3s';
-        ligne.style.opacity = '0';
-        setTimeout(() => ligne.remove(), 300);
-      }
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/compte-admin.js"></script>
 
   </body>
 </html>

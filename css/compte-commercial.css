@@ -116,6 +116,8 @@ header.menu {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .cand-photo {
@@ -141,11 +143,125 @@ header.menu {
   padding-left: 2px;
 }
 
+/* ── Ajouter un bien ── */
+.ajouter-bien {
+  padding: 0 5% 40px;
+}
+
+.ajouter-bien-titre {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.form-bien {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 900px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  padding: 8px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+.form-row:has(textarea),
+.form-row:has(.prix-row) {
+  grid-column: 1 / -1;
+}
+
+.prix-row {
+  display: flex;
+  gap: 10px;
+}
+
+.prix-row input {
+  flex: 1;
+}
+
+#btn-estimer-prix {
+  padding: 8px 14px;
+  background: white;
+  border: 1.5px solid #333;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+#btn-estimer-prix:hover {
+  background: #333;
+  color: white;
+}
+
+.message-info {
+  grid-column: 1 / -1;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+}
+
+.message-info.message-erreur {
+  background: #fdecea;
+  color: #b3261e;
+  border: 1px solid #f5c2bc;
+}
+
+.message-info.message-succes {
+  background: #eaf7ee;
+  color: #1e7d32;
+  border: 1px solid #bfe3c8;
+}
+
+.btn-publier {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 10px 24px;
+  background: rgb(0, 31, 63);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-publier:hover {
+  background: #003a7a;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 860px) {
   .candidatures-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-bien {
+    grid-template-columns: 1fr;
   }
 }
 

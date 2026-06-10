@@ -104,6 +104,19 @@ header.menu {
   opacity: 0.9;
 }
 
+.message-erreur {
+  width: 100%;
+  margin: 0;
+  padding: 10px 14px;
+  background-color: #fdecea;
+  color: #b3261e;
+  border: 1px solid #f5c2bc;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 600px) {

@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -46,53 +46,17 @@
         <button class="bouton-trier">Trier</button>
       </div>
 
-      <!-- Grille des annonces -->
+      <!-- Grille des annonces : générée dynamiquement par js/annonces.js -->
       <div class="annonces-grid">
-        <a class="annonce-card" href="description-annonce.html?id=2&img=images/appart/appart-1.jpeg">
-          <div class="annonce-photo">
-            <img src="images/appart/appart-1.jpeg" alt="" />
-          </div>
-          <div class="annonce-prix-statut">
-            <span class="prix">250 000 € <small>par mois</small></span>
-            <span class="statut">À vendre</span>
-          </div>
-          <div class="annonce-info">
-            <span class="ville">Blois — Centre-ville</span>
-            <span class="superficie">36 m²</span>
-            <button class="btn-contact">✉</button>
-          </div>
-        </a>
-
-        <a class="annonce-card" href="description-annonce.html?id=10&img=images/appart/appart-2.jpeg">
-          <div class="annonce-photo">
-            <img src="images/appart/appart-2.jpeg" alt="appartement 1" />
-          </div>
-          <div class="annonce-prix-statut">
-            <span class="prix">1500 € <small>par mois</small></span>
-            <span class="statut">LOCATION</span>
-          </div>
-          <div class="annonce-info">
-            <span class="ville">Senones</span>
-            <span class="superficie">29 m²</span>
-            <button class="btn-contact">✉</button>
-          </div>
-        </a>
-
-        <a class="annonce-card" href="description-annonce.html?id=12&img=images/appart/appart-3.jpeg">
-          <div class="annonce-photo">
-            <img src="images/appart/appart-3.jpeg" alt="" />
-          </div>
-          <div class="annonce-prix-statut">
-            <span class="prix">380 000 € <small>par mois</small></span>
-            <span class="statut">À vendre</span>
-          </div>
-          <div class="annonce-info">
-            <span class="ville">Terville</span>
-            <span class="superficie">67 m²</span>
-            <button class="btn-contact">✉</button>
-          </div>
-        </a>
+        <p>Chargement des annonces...</p>
       </div>
     </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/annonces.js"></script>
   </body>
 </html>

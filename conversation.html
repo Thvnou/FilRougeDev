@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -47,57 +47,7 @@
 
       <!-- Messages -->
       <div class="messages-fil">
-
-        <!-- Séparateur de date -->
-        <div class="separateur-date"><span>Mercredi 4 juin 2026</span></div>
-
-        <!-- Message reçu -->
-        <div class="message recu">
-          <div class="msg-avatar">MA</div>
-          <div class="msg-bulle">
-            <p>Bonjour, j'ai bien reçu votre dossier de candidature pour l'appartement au 14 rue de la Roquette. Pourriez-vous nous envoyer également votre dernier avis d'imposition ?</p>
-            <span class="msg-heure">09:04</span>
-          </div>
-        </div>
-
-        <!-- Message envoyé -->
-        <div class="message envoye">
-          <div class="msg-bulle">
-            <p>Bonjour Marie, bien sûr ! Je vous transmets le document dès ce soir.</p>
-            <span class="msg-heure">09:48</span>
-          </div>
-        </div>
-
-        <!-- Message reçu -->
-        <div class="message recu">
-          <div class="msg-avatar">MA</div>
-          <div class="msg-bulle">
-            <p>Parfait, merci beaucoup. Nous reviendrons vers vous dans les 48h suivant la réception.</p>
-            <span class="msg-heure">10:12</span>
-          </div>
-        </div>
-
-        <!-- Séparateur de date -->
-        <div class="separateur-date"><span>Aujourd'hui — 5 juin 2026</span></div>
-
-        <!-- Message reçu -->
-        <div class="message recu">
-          <div class="msg-avatar">MA</div>
-          <div class="msg-bulle">
-            <p>Bonjour, j'ai bien reçu votre avis d'imposition. Votre dossier est complet, il sera présenté au propriétaire cette semaine.</p>
-            <span class="msg-heure">14:32</span>
-          </div>
-        </div>
-
-        <!-- Message reçu -->
-        <div class="message recu">
-          <div class="msg-avatar">MA</div>
-          <div class="msg-bulle">
-            <p>Pourriez-vous également confirmer vos disponibilités pour une visite la semaine prochaine ?</p>
-            <span class="msg-heure">14:33</span>
-          </div>
-        </div>
-
+        <p>Chargement de la conversation...</p>
       </div>
 
       <!-- Zone de saisie -->
@@ -111,5 +61,11 @@
       </form>
 
     </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/conversation.js"></script>
   </body>
 </html>

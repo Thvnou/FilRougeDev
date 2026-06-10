@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -47,44 +47,17 @@
       </div>
 
       <div class="annonces-grid">
-        <div class="annonce-card">
-          <div class="annonce-photo">
-            <img src="images/appart/appart-1.jpeg" alt="" />
-          </div>
-          <div class="annonce-prix-statut">
-            <span class="prix">250 000 € <small>par mois</small></span>
-            <span class="statut">À vendre</span>
-          </div>
-          <div class="annonce-info">
-            <span class="ville">Blois — Centre-ville</span>
-            <span class="superficie">36 m²</span>
-          </div>
-        </div>
-
-        <div class="annonce-card">
-          <div class="annonce-photo">
-            <img src="images/appart/appart-2.jpeg" alt="appartement 1" />
-          </div>
-          <div class="annonce-prix-statut">
-            <span class="prix">1500 € <small>par mois</small></span>
-            <span class="statut">LOCATION</span>
-          </div>
-          <div class="annonce-info">
-            <span class="ville">Senones</span>
-            <span class="superficie">29 m²</span>
-          </div>
-        </div>
+        <p>Chargement de vos candidatures...</p>
+      </div>
 
     </section>
 
-    <script>
-      document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-        });
-      });
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/candidatures-client.js"></script>
 
   </body>
 </html>

@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -36,14 +36,21 @@
     <section class="page-inscription">
   <div class="formulaire-inscription">
     <h2>Je crée mon compte</h2>
-    <input type="text" placeholder="Nom" />
-    <input type="text" placeholder="Prénom" />
-    <input type="tel" placeholder="Téléphone" />
-    <input type="email" placeholder="Email" />
-    <input type="password" placeholder="Mot de passe" />
-    <input type="password" placeholder="Confirmer mot de passe" />
-    <button class="bouton-valider">Valider</button>
+    <p id="creation-error" class="message-erreur" style="display:none;"></p>
+    <input type="text" id="lastname" placeholder="Nom" />
+    <input type="text" id="firstname" placeholder="Prénom" />
+    <input type="tel" id="phone" placeholder="Téléphone" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <input type="password" id="confirm-password" placeholder="Confirmer mot de passe" />
+    <button class="bouton-valider" type="button">Valider</button>
   </div>
 </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/creation-compte.js"></script>
   </body>
 </html>

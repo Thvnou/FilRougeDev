@@ -149,10 +149,25 @@ header.menu {
 }
 
 .annonce-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
   background: #d0ccc8;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #bbb;
+}
+
+.statut--attente {
+  color: #8a6d00;
+}
+
+.statut--acceptee {
+  color: #1e7d32;
+}
+
+.statut--refusee {
+  color: #b3261e;
 }
 
 .annonce-photo {

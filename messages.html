@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -41,41 +41,14 @@
 
       <!-- Liste des conversations -->
       <ul class="conversations-liste">
-
-        <!-- Conversation 1 — non lue -->
-        <li class="conversation-item non-lue">
-          <a href="conversation.html" class="conversation-lien">
-            <div class="conv-avatar">MA</div>
-            <div class="conv-corps">
-              <div class="conv-top">
-                <span class="conv-nom">Marie Angers — Appartement Paris 11e</span>
-                <span class="conv-date">Aujourd'hui, 14:32</span>
-              </div>
-              <div class="conv-bas">
-                <span class="conv-apercu">Bonjour, j'ai bien reçu votre dossier. Pourriez-vous nous envoyer…</span>
-                <span class="conv-badge">2</span>
-              </div>
-            </div>
-          </a>
-        </li>
-
-        <!-- Conversation 2 -->
-        <li class="conversation-item">
-          <a href="conversation.html" class="conversation-lien">
-            <div class="conv-avatar">TL</div>
-            <div class="conv-corps">
-              <div class="conv-top">
-                <span class="conv-nom">Thomas Laurent — Studio Lyon 6e</span>
-                <span class="conv-date">Hier, 09:15</span>
-              </div>
-              <div class="conv-bas">
-                <span class="conv-apercu">Merci pour votre retour, nous reviendrons vers vous rapidement.</span>
-              </div>
-            </div>
-          </a>
-        </li>
-
+        <li><p>Chargement de vos conversations...</p></li>
       </ul>
     </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/messages.js"></script>
   </body>
 </html>

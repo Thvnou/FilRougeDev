@@ -287,6 +287,11 @@ header.menu {
   color: #92400e;
 }
 
+.tag--direction {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
 /* ── Boutons du tableau ── */
 .btn-table {
   padding: 6px 14px;

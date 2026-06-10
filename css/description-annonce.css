@@ -117,6 +117,26 @@ header.menu {
   border-color: #001f3f;
 }
 
+.btn-favori-detail {
+  padding: 10px 16px;
+  background: white;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-favori-detail.active {
+  border-color: #d4a017;
+  color: #d4a017;
+}
+
+.detail-bas {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /* Côté droit : infos */
 .detail-droite {
   flex: 1;

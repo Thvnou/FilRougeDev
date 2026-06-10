@@ -14,9 +14,9 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
-        <li>Nos agences</li>
-        <li>Mes favoris</li>
-        <li>Mon compte</li>
+        <li id="nav-agences">Nos agences</li>
+        <li id="nav-favoris">Mes favoris</li>
+        <li id="nav-compte">Mon compte</li>
       </nav>
     </section>
 
@@ -41,6 +41,7 @@
         </div>
         <div class="detail-bas">
           <span class="reference" id="detail-ref">Réf. —</span>
+          <button class="btn-favori-detail" id="btn-favori-detail">☆ Ajouter aux favoris</button>
           <button class="btn-candidature">J'envoie ma candidature</button>
         </div>
       </div>
@@ -80,32 +81,11 @@
 
     </section>
 
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const img = params.get('img');
-      const id  = params.get('id');
-
-      // 1. Affiche immédiatement la photo transmise depuis la page annonces
-      if (img) {
-        document.getElementById('detail-img').src = img;
-      }
-
-      // 2. Récupère les données texte du bien depuis l'API
-      if (id) {
-        fetch(`http://localhost:8000/api/properties/${id}`)
-          .then(res => res.json())
-          .then(p => {
-            document.getElementById('detail-ref').textContent      = `Réf. ${String(p.id).padStart(5, '0')}`;
-            document.getElementById('detail-type').textContent     = p.type;
-            document.getElementById('detail-category').textContent = p.category;
-            document.getElementById('detail-city').textContent     = p.city;
-            document.getElementById('detail-area').textContent     = `${p.area} m²`;
-            document.getElementById('detail-price').textContent    = `${p.price.toLocaleString('fr-FR')} €`;
-            document.getElementById('detail-rooms').textContent    = p.rooms;
-          })
-          .catch(() => console.error('Impossible de charger les données du bien'));
-      }
-    </script>
-
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/description-annonce.js"></script>
   </body>
 </html>
