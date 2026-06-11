@@ -44,51 +44,51 @@ INSERT INTO users (id, firstname, lastname, email, password, role, id_agence) VA
 (19, 'Maxime', 'Acheteur5', 'maxime.buyer@gmail.com', 'hashed_client', 'client', NULL);
 
 -- Insertion de 30 Biens Immobiliers répartis géographiquement
-INSERT INTO property (id, title, description, category, type, price, area, rooms, city, postcode, user_id, status) VALUES 
+INSERT INTO property (id, title, description, category, type, price, area, rooms, city, postcode, user_id, status, image) VALUES
 -- Aix-en-Provence / Siège (Commercial id: 2)
-(1, 'Bastide Provençale de Prestige', 'Authentique bastide avec piscine...', 'Résidentiel', 'Maison', 920000, 165, 6, 'Aix-en-Provence', '13100', 2, 'Vendu'),
-(2, 'Villa Contemporaine Celony', 'Lignes épurées, grand terrain...', 'Résidentiel', 'Maison', 1250000, 190, 7, 'Aix-en-Provence', '13100', 2, 'Disponible'),
-(3, 'Appartement Centre Historique', 'Charme de l''ancien rénové...', 'Résidentiel', 'Appartement', 340000, 52, 2, 'Aix-en-Provence', '13100', 2, 'Vendu'),
+(1, 'Bastide Provençale de Prestige', 'Authentique bastide avec piscine...', 'Résidentiel', 'Maison', 920000, 165, 6, 'Aix-en-Provence', '13100', 2, 'Vendu', 'images/appart/appart-1.jpeg'),
+(2, 'Villa Contemporaine Celony', 'Lignes épurées, grand terrain...', 'Résidentiel', 'Maison', 1250000, 190, 7, 'Aix-en-Provence', '13100', 2, 'Disponible', 'images/appart/appart-2.jpeg'),
+(3, 'Appartement Centre Historique', 'Charme de l''ancien rénové...', 'Résidentiel', 'Appartement', 340000, 52, 2, 'Aix-en-Provence', '13100', 2, 'Vendu', 'images/appart/appart-3.jpeg'),
 -- Paris (Commercial id: 3)
-(4, 'Studio Cosy Saint-Michel', 'Idéal investissement locatif...', 'Résidentiel', 'Appartement', 290000, 19, 1, 'Paris', '75005', 3, 'Vendu'),
-(5, 'Duplex Haussmannien Marais', 'Prestations haut de gamme...', 'Résidentiel', 'Appartement', 1450000, 95, 4, 'Paris', '75004', 3, 'Vendu'),
-(6, 'Bureaux d''Affaires Opéra', 'Plateau de bureaux modernes...', 'Professionnel', 'Bureau', 2800000, 150, 5, 'Paris', '75009', 3, 'Disponible'),
+(4, 'Studio Cosy Saint-Michel', 'Idéal investissement locatif...', 'Résidentiel', 'Appartement', 290000, 19, 1, 'Paris', '75005', 3, 'Vendu', 'images/appart/appart-11.jpeg'),
+(5, 'Duplex Haussmannien Marais', 'Prestations haut de gamme...', 'Résidentiel', 'Appartement', 1450000, 95, 4, 'Paris', '75004', 3, 'Vendu', 'images/appart/appart-12.jpeg'),
+(6, 'Bureaux d''Affaires Opéra', 'Plateau de bureaux modernes...', 'Professionnel', 'Bureau', 2800000, 150, 5, 'Paris', '75009', 3, 'Disponible', 'images/pro/pro-1.png'),
 -- Lyon (Commercial id: 4)
-(7, 'T3 Lumineux Confluence', 'Résidence BBC, balcon exposé sud...', 'Résidentiel', 'Appartement', 310000, 68, 3, 'Lyon', '69002', 4, 'Vendu'),
-(8, 'Plateau de Bureaux Part-Dieu', 'Emplacement tertiaire stratégique...', 'Professionnel', 'Bureau', 890000, 130, 4, 'Lyon', '69003', 4, 'Vendu'),
+(7, 'T3 Lumineux Confluence', 'Résidence BBC, balcon exposé sud...', 'Résidentiel', 'Appartement', 310000, 68, 3, 'Lyon', '69002', 4, 'Vendu', 'images/appart/appart-13.jpeg'),
+(8, 'Plateau de Bureaux Part-Dieu', 'Emplacement tertiaire stratégique...', 'Professionnel', 'Bureau', 890000, 130, 4, 'Lyon', '69003', 4, 'Vendu', 'images/pro/pro-2.png'),
 -- Marseille (Commercial id: 5)
-(9, 'T2 Vue Mer Endoume', 'Rare à la vente, terrasse plein ciel...', 'Résidentiel', 'Appartement', 280000, 40, 2, 'Marseille', '13007', 5, 'Vendu'),
-(10, 'Maison de Ville Roucas-Blanc', 'Calme, jardin, charme fou...', 'Résidentiel', 'Maison', 740000, 110, 4, 'Marseille', '13007', 5, 'Disponible'),
+(9, 'T2 Vue Mer Endoume', 'Rare à la vente, terrasse plein ciel...', 'Résidentiel', 'Appartement', 280000, 40, 2, 'Marseille', '13007', 5, 'Vendu', 'images/appart/appart-14.jpeg'),
+(10, 'Maison de Ville Roucas-Blanc', 'Calme, jardin, charme fou...', 'Résidentiel', 'Maison', 740000, 110, 4, 'Marseille', '13007', 5, 'Disponible', 'images/appart/appart-16.jpeg'),
 -- Nice (Commercial id: 6)
-(11, '3 Pièces Promenade des Anglais', 'Vue mer panoramique, grand balcon...', 'Résidentiel', 'Appartement', 620000, 75, 3, 'Nice', '06000', 6, 'Vendu'),
-(12, 'Villa d''Architecte Cimiez', 'Prestations luxueuses, piscine miroir...', 'Résidentiel', 'Maison', 1850000, 220, 8, 'Nice', '06000', 6, 'Disponible'),
+(11, '3 Pièces Promenade des Anglais', 'Vue mer panoramique, grand balcon...', 'Résidentiel', 'Appartement', 620000, 75, 3, 'Nice', '06000', 6, 'Vendu', 'images/appart/appart-17.png'),
+(12, 'Villa d''Architecte Cimiez', 'Prestations luxueuses, piscine miroir...', 'Résidentiel', 'Maison', 1850000, 220, 8, 'Nice', '06000', 6, 'Disponible', 'images/appart/appart-18.png'),
 -- Bordeaux (Commercial id: 7)
-(13, 'Echoppe Bordelaise Chartrons', 'Jardin intime sans vis-à-vis...', 'Résidentiel', 'Maison', 490000, 95, 4, 'Bordeaux', '33300', 7, 'Vendu'),
-(14, 'Bureaux Rénovés Centre-Ville', 'Idéal professions libérales...', 'Professionnel', 'Bureau', 360000, 60, 3, 'Bordeaux', '33000', 7, 'Vendu'),
+(13, 'Echoppe Bordelaise Chartrons', 'Jardin intime sans vis-à-vis...', 'Résidentiel', 'Maison', 490000, 95, 4, 'Bordeaux', '33300', 7, 'Vendu', 'images/appart/appart-19.png'),
+(14, 'Bureaux Rénovés Centre-Ville', 'Idéal professions libérales...', 'Professionnel', 'Bureau', 360000, 60, 3, 'Bordeaux', '33000', 7, 'Vendu', 'images/pro/pro-3.png'),
 -- Toulouse (Commercial id: 8)
-(15, 'T3 Toulousain Briques Apparentes', 'Hyper-centre, beaucoup de cachet...', 'Résidentiel', 'Appartement', 2650000, 72, 3, 'Toulouse', '31000', 8, 'Vendu'),
-(16, 'Maison Familiale Tournefeuille', 'Grand jardin, quartier résidentiel...', 'Résidentiel', 'Maison', 420000, 120, 5, 'Toulouse', '31170', 8, 'Disponible'),
+(15, 'T3 Toulousain Briques Apparentes', 'Hyper-centre, beaucoup de cachet...', 'Résidentiel', 'Appartement', 2650000, 72, 3, 'Toulouse', '31000', 8, 'Vendu', 'images/appart/appart-20.png'),
+(16, 'Maison Familiale Tournefeuille', 'Grand jardin, quartier résidentiel...', 'Résidentiel', 'Maison', 420000, 120, 5, 'Toulouse', '31170', 8, 'Disponible', 'images/appart/appart-21.png'),
 -- Nantes (Commercial id: 9)
-(17, 'Loft Atypique Île de Nantes', 'Ancien entrepôt réhabilité...', 'Résidentiel', 'Appartement', 450000, 105, 3, 'Nantes', '44200', 9, 'Vendu'),
-(18, 'Local Commercial Centre-Ville', 'Emplacement numéro 1, forte visibilité...', 'Professionnel', 'Local commercial', 580000, 80, 2, 'Nantes', '44000', 9, 'Vendu'),
+(17, 'Loft Atypique Île de Nantes', 'Ancien entrepôt réhabilité...', 'Résidentiel', 'Appartement', 450000, 105, 3, 'Nantes', '44200', 9, 'Vendu', 'images/appart/appart-1.jpeg'),
+(18, 'Local Commercial Centre-Ville', 'Emplacement numéro 1, forte visibilité...', 'Professionnel', 'Local commercial', 580000, 80, 2, 'Nantes', '44000', 9, 'Vendu', 'images/pro/pro-4.png'),
 -- Strasbourg (Commercial id: 10)
-(19, 'Appartement Neudorf T4', 'Proche tramway, grande terrasse...', 'Résidentiel', 'Appartement', 330000, 88, 4, 'Strasbourg', '67100', 10, 'Vendu'),
-(20, 'Bureaux Secteur Européen', 'Plateau moderne câblé RJ45...', 'Professionnel', 'Bureau', 720000, 110, 4, 'Strasbourg', '67000', 10, 'Disponible'),
+(19, 'Appartement Neudorf T4', 'Proche tramway, grande terrasse...', 'Résidentiel', 'Appartement', 330000, 88, 4, 'Strasbourg', '67100', 10, 'Vendu', 'images/appart/appart-2.jpeg'),
+(20, 'Bureaux Secteur Européen', 'Plateau moderne câblé RJ45...', 'Professionnel', 'Bureau', 720000, 110, 4, 'Strasbourg', '67000', 10, 'Disponible', 'images/pro/pro-5.png'),
 -- Lille (Commercial id: 11)
-(21, 'Type 2 Vieux-Lille', 'Idéal premier achat, briques et poutres...', 'Résidentiel', 'Appartement', 195000, 38, 2, 'Lille', '59800', 11, 'Vendu'),
-(22, 'Maison de Ville Vauban', 'Proche universités, petite cour...', 'Résidentiel', 'Maison', 380000, 100, 5, 'Lille', '59000', 11, 'Vendu'),
+(21, 'Type 2 Vieux-Lille', 'Idéal premier achat, briques et poutres...', 'Résidentiel', 'Appartement', 195000, 38, 2, 'Lille', '59800', 11, 'Vendu', 'images/appart/appart-3.jpeg'),
+(22, 'Maison de Ville Vauban', 'Proche universités, petite cour...', 'Résidentiel', 'Maison', 380000, 100, 5, 'Lille', '59000', 11, 'Vendu', 'images/appart/appart-11.jpeg'),
 -- Montpellier (Commercial id: 12)
-(23, 'T3 Moderne Port Marianne', 'Terrasse dinatoire, garage en sous-sol...', 'Résidentiel', 'Appartement', 295000, 70, 3, 'Montpellier', '34000', 12, 'Vendu'),
-(24, 'Villa Contemporaine Castelnau', 'Design épuré, piscine, climatisation...', 'Résidentiel', 'Maison', 810000, 150, 6, 'Montpellier', '34170', 12, 'Disponible'),
+(23, 'T3 Moderne Port Marianne', 'Terrasse dinatoire, garage en sous-sol...', 'Résidentiel', 'Appartement', 295000, 70, 3, 'Montpellier', '34000', 12, 'Vendu', 'images/appart/appart-12.jpeg'),
+(24, 'Villa Contemporaine Castelnau', 'Design épuré, piscine, climatisation...', 'Résidentiel', 'Maison', 810000, 150, 6, 'Montpellier', '34170', 12, 'Disponible', 'images/appart/appart-13.jpeg'),
 -- Rennes (Commercial id: 13)
-(25, 'Appartement T2 Thabor', 'Résidence de standing, calme absolu...', 'Résidentiel', 'Appartement', 185000, 45, 2, 'Rennes', '35000', 13, 'Vendu'),
-(26, 'Maison Néo-Bretonne', 'Tranquillité en périphérie proche...', 'Résidentiel', 'Maison', 410000, 130, 6, 'Rennes', '35000', 13, 'Vendu'),
+(25, 'Appartement T2 Thabor', 'Résidence de standing, calme absolu...', 'Résidentiel', 'Appartement', 185000, 45, 2, 'Rennes', '35000', 13, 'Vendu', 'images/appart/appart-14.jpeg'),
+(26, 'Maison Néo-Bretonne', 'Tranquillité en périphérie proche...', 'Résidentiel', 'Maison', 410000, 130, 6, 'Rennes', '35000', 13, 'Vendu', 'images/appart/appart-16.jpeg'),
 -- Reims (Commercial id: 14)
-(27, 'T3 Proche Cathédrale', 'Lumineux, dernier étage, box inclus...', 'Résidentiel', 'Appartement', 240000, 65, 3, 'Reims', '51100', 14, 'Vendu'),
-(28, 'Immeuble de Bureaux Centre', 'Investissement tertiaire sécurisé...', 'Professionnel', 'Bureau', 1350000, 310, 10, 'Reims', '51100', 14, 'Disponible'),
+(27, 'T3 Proche Cathédrale', 'Lumineux, dernier étage, box inclus...', 'Résidentiel', 'Appartement', 240000, 65, 3, 'Reims', '51100', 14, 'Vendu', 'images/appart/appart-17.png'),
+(28, 'Immeuble de Bureaux Centre', 'Investissement tertiaire sécurisé...', 'Professionnel', 'Bureau', 1350000, 310, 10, 'Reims', '51100', 14, 'Disponible', 'images/pro/pro-6.png'),
 -- Données additionnelles pour affiner le modèle mathématique de l''IA
-(29, 'Studio Étudiant Villeurbanne', 'Vendu meublé, forte rentabilité...', 'Résidentiel', 'Appartement', 135000, 18, 1, 'Lyon', '69100', 4, 'Vendu'),
-(30, 'Maison de Ville Rénovée', 'Prestations modernes et garage...', 'Résidentiel', 'Maison', 480000, 115, 4, 'Bordeaux', '33000', 7, 'Vendu');
+(29, 'Studio Étudiant Villeurbanne', 'Vendu meublé, forte rentabilité...', 'Résidentiel', 'Appartement', 135000, 18, 1, 'Lyon', '69100', 4, 'Vendu', 'images/appart/appart-18.png'),
+(30, 'Maison de Ville Rénovée', 'Prestations modernes et garage...', 'Résidentiel', 'Maison', 480000, 115, 4, 'Bordeaux', '33000', 7, 'Vendu', 'images/appart/appart-19.png');
 
 -- 4. Insertion de l'historique des Transactions (22 ventes réelles pour l'entraînement de l'IA)
 INSERT INTO transactions (property_id, buyer_id, final_price, sold_at) VALUES 

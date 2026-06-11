@@ -30,6 +30,7 @@ CREATE TABLE property (
     postcode VARCHAR(10) NOT NULL,
     user_id INTEGER NOT NULL,
     status VARCHAR(30) NOT NULL DEFAULT 'Disponible',
+    image VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE RESTRICT
 );

@@ -64,6 +64,35 @@ header.menu {
   font-weight: 600;
 }
 
+/* ── Onglets de catégorie ── */
+.onglets-categorie {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.onglet-categorie {
+  padding: 10px 22px;
+  border: 1.5px solid rgb(0, 31, 63);
+  background: rgba(255, 255, 255, 0.55);
+  color: rgb(0, 31, 63);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.onglet-categorie:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.onglet-categorie.active {
+  background: rgb(0, 31, 63);
+  color: aliceblue;
+}
+
 .barre-recherche {
   display: flex;
   align-items: center;
@@ -262,5 +291,12 @@ header.menu {
 
   .formulaire-recherche {
     flex-direction: column;
+  }
+
+  .onglet-categorie {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.82rem;
   }
 }

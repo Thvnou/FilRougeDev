@@ -24,25 +24,48 @@ async function fetchProperty(id) {
 }
 
 /**
- * La base de données ne stocke pas (encore) de photo par bien : on choisit
- * une image parmi le pool disponible dans images/appart/, de façon stable
- * pour un même bien (basé sur son id).
+ * La table `property` possède une colonne `image` (chemin relatif vers
+ * images/appart/... ou images/pro/...) renseignée pour les 30 biens du jeu
+ * de données. Pour un bien qui n'aurait pas d'image en base (ex : bien créé
+ * via le formulaire commercial), on retombe sur un pool d'images par défaut
+ * choisi selon la catégorie du bien, de façon stable (basé sur son id).
  */
-const PROPERTY_IMAGE_POOL = [
-  "images/appart/appart-1.jpeg",
-  "images/appart/appart-2.jpeg",
-  "images/appart/appart-3.jpeg",
-  "images/appart/appart-11.jpeg",
-  "images/appart/appart-12.jpeg",
-  "images/appart/appart-13.jpeg",
-  "images/appart/appart-14.jpeg",
-  "images/appart/appart-15.jpeg",
-  "images/appart/appart-16.jpeg",
-];
+const PROPERTY_IMAGE_POOLS = {
+  Résidentiel: [
+    "images/appart/appart-1.jpeg",
+    "images/appart/appart-2.jpeg",
+    "images/appart/appart-3.jpeg",
+    "images/appart/appart-11.jpeg",
+    "images/appart/appart-12.jpeg",
+    "images/appart/appart-13.jpeg",
+    "images/appart/appart-14.jpeg",
+    "images/appart/appart-16.jpeg",
+    "images/appart/appart-17.png",
+    "images/appart/appart-18.png",
+    "images/appart/appart-19.png",
+    "images/appart/appart-20.png",
+    "images/appart/appart-21.png",
+  ],
+  Professionnel: [
+    "images/pro/pro-1.png",
+    "images/pro/pro-2.png",
+    "images/pro/pro-3.png",
+    "images/pro/pro-4.png",
+    "images/pro/pro-5.png",
+    "images/pro/pro-6.png",
+  ],
+};
 
 function getImageForProperty(property) {
-  const index = Number(property.id) % PROPERTY_IMAGE_POOL.length;
-  return PROPERTY_IMAGE_POOL[index];
+  if (property && property.image) {
+    return property.image;
+  }
+
+  const pool =
+    PROPERTY_IMAGE_POOLS[property && property.category] ||
+    PROPERTY_IMAGE_POOLS.Résidentiel;
+  const index = Number(property.id) % pool.length;
+  return pool[index];
 }
 
 function formatPrice(price) {

@@ -10,11 +10,13 @@
 
 let toutesLesAnnonces = [];
 let triPrixCroissant = true;
+let categorieActuelle = "tous";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerAnnonces();
   preremplirFiltresDepuisURL();
   initFiltresEnDirect();
+  initOngletsCategorie();
   initTri();
   initFavoris();
 });
@@ -53,6 +55,17 @@ function preremplirFiltresDepuisURL() {
   if (select && params.get("type")) {
     select.value = params.get("type");
   }
+
+  // Catégorie (Résidentiel / Professionnel) transmise via ?categorie=...
+  const categorie = params.get("categorie");
+  if (categorie === "Résidentiel" || categorie === "Professionnel") {
+    categorieActuelle = categorie;
+    document.querySelectorAll(".onglet-categorie").forEach((onglet) => {
+      const actif = onglet.dataset.categorie === categorie;
+      onglet.classList.toggle("active", actif);
+      onglet.setAttribute("aria-selected", actif ? "true" : "false");
+    });
+  }
 }
 
 /**
@@ -65,6 +78,10 @@ function appliquerFiltresEtAfficher() {
   const [inputVille, inputBudget, inputSurface] = inputs;
 
   let liste = [...toutesLesAnnonces];
+
+  if (categorieActuelle === "Résidentiel" || categorieActuelle === "Professionnel") {
+    liste = liste.filter((p) => p.category === categorieActuelle);
+  }
 
   const ville = inputVille ? inputVille.value.trim().toLowerCase() : "";
   const budget = inputBudget ? inputBudget.value : "";
@@ -120,6 +137,29 @@ function initFiltresEnDirect() {
   document.querySelectorAll(".formulaire-recherche input, .formulaire-recherche select").forEach((el) => {
     el.addEventListener("input", appliquerFiltresEtAfficher);
     el.addEventListener("change", appliquerFiltresEtAfficher);
+  });
+}
+
+/**
+ * Onglets "Tous les biens / Résidentiel / Professionnel" : filtrent la
+ * grille par catégorie de bien.
+ */
+function initOngletsCategorie() {
+  const onglets = document.querySelectorAll(".onglet-categorie");
+  if (!onglets.length) return;
+
+  onglets.forEach((onglet) => {
+    onglet.addEventListener("click", () => {
+      categorieActuelle = onglet.dataset.categorie;
+
+      onglets.forEach((o) => {
+        const actif = o === onglet;
+        o.classList.toggle("active", actif);
+        o.setAttribute("aria-selected", actif ? "true" : "false");
+      });
+
+      appliquerFiltresEtAfficher();
+    });
   });
 }
 
