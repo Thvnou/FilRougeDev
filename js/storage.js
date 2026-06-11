@@ -116,7 +116,7 @@ function saveCandidatures(list) {
   writeJSON(STORAGE_KEYS.CANDIDATURES, list);
 }
 
-function addCandidature({ property_id, metier, salaire, telephone }) {
+function addCandidature({ property_id, metier, salaire, telephone, message }) {
   const session = getSession();
   const list = getCandidatures();
   const newCandidature = {
@@ -128,6 +128,7 @@ function addCandidature({ property_id, metier, salaire, telephone }) {
     metier: metier || "Non renseigné",
     salaire: salaire || 0,
     telephone: telephone || "",
+    message: message || "",
     status: "en attente",
     created_at: new Date().toISOString(),
   };

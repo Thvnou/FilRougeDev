@@ -14,6 +14,7 @@
         <p>12 agences sur toute la France</p>
       </div>
       <nav class="nav-top-page">
+        <li id="nav-accueil">Accueil</li>
         <li id="nav-agences">Nos agences</li>
         <li id="nav-favoris">Mes favoris</li>
         <li id="nav-compte">Mon compte</li>
@@ -80,6 +81,58 @@
       </div>
 
     </section>
+
+    <!-- Modale : formulaire de candidature -->
+    <div class="modal-overlay" id="modal-candidature" hidden>
+      <div class="modal-candidature" role="dialog" aria-modal="true" aria-labelledby="modal-candidature-titre">
+        <button type="button" class="modal-fermer" id="modal-candidature-fermer" aria-label="Fermer">&times;</button>
+
+        <div class="modal-candidature-corps">
+          <h2 id="modal-candidature-titre">Envoyer ma candidature</h2>
+          <p class="modal-candidature-sous-titre">Bien concerné : <span id="modal-candidature-bien">—</span></p>
+
+          <form id="form-candidature" novalidate>
+            <div class="champ">
+              <label for="cand-profession">Profession <span class="requis">*</span></label>
+              <input type="text" id="cand-profession" name="profession" placeholder="Ex : Ingénieur logiciel" autocomplete="organization-title" />
+              <span class="champ-erreur" id="err-profession"></span>
+            </div>
+
+            <div class="champ">
+              <label for="cand-salaire">Salaire mensuel net (€) <span class="requis">*</span></label>
+              <input type="number" id="cand-salaire" name="salaire" min="0" step="50" inputmode="numeric" placeholder="Ex : 2200" />
+              <span class="champ-erreur" id="err-salaire"></span>
+            </div>
+
+            <div class="champ">
+              <label for="cand-telephone">Téléphone <span class="requis">*</span></label>
+              <input type="tel" id="cand-telephone" name="telephone" placeholder="Ex : 06 12 34 56 78" autocomplete="tel" />
+              <span class="champ-erreur" id="err-telephone"></span>
+            </div>
+
+            <div class="champ">
+              <label for="cand-message">Message à l'agence (optionnel)</label>
+              <textarea id="cand-message" name="message" rows="4" placeholder="Présentez-vous en quelques lignes : situation actuelle, date d'emménagement souhaitée, garants éventuels..."></textarea>
+            </div>
+
+            <p class="modal-candidature-note">
+              Ces informations seront transmises à l'agence afin d'étudier votre dossier.
+            </p>
+
+            <div class="modal-candidature-actions">
+              <button type="button" class="btn-annuler" id="modal-candidature-annuler">Annuler</button>
+              <button type="submit" class="btn-envoyer">Envoyer ma candidature</button>
+            </div>
+          </form>
+
+          <div class="modal-candidature-succes" id="modal-candidature-succes" hidden>
+            <p class="succes-icone">&#10003;</p>
+            <p class="succes-texte">Votre candidature a bien été envoyée à l'agence.</p>
+            <button type="button" class="btn-envoyer" id="modal-candidature-fermer-succes">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="js/config.js"></script>
     <script src="js/storage.js"></script>

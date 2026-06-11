@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ymmo</title>
-    <link rel="stylesheet" href="css/annonces.css" />
+    <title>Ymmo — Mes favoris</title>
+    <link rel="stylesheet" href="css/biens-favoris.css" />
   </head>
 
   <body>
@@ -31,25 +31,13 @@
       </div>
     </header>
 
-    <!-- Toutes les annonces -->
-    <section class="all-annonces">
-      <h3>Nos annonces</h3>
-      <div class="barre-recherche">
-        <div class="formulaire-recherche">
-          <select>
-            <option value="acheter">Acheter</option>
-            <option value="louer">Louer</option>
-          </select>
-          <input type="text" placeholder="Où cherchez vous ?" />
-          <input type="text" placeholder="budget max" />
-          <input type="text" placeholder="m2 Minimum" />
-        </div>
-        <button class="bouton-trier">Trier</button>
-      </div>
+    <!-- Mes biens favoris -->
+    <section class="all-annonces favoris-section">
+      <h3>Mes biens favoris</h3>
 
-      <!-- Grille des annonces : générée dynamiquement par js/annonces.js -->
+      <!-- Grille des favoris : générée dynamiquement par js/biens-favoris.js -->
       <div class="annonces-grid">
-        <p>Chargement des annonces...</p>
+        <p>Chargement de vos favoris...</p>
       </div>
     </section>
 
@@ -58,6 +46,6 @@
     <script src="js/auth.js"></script>
     <script src="js/properties.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/annonces.js"></script>
+    <script src="js/biens-favoris.js"></script>
   </body>
 </html>

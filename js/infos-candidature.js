@@ -113,6 +113,10 @@ function afficherCandidats() {
   candidats.forEach((candidat) => {
     const card = document.createElement("div");
     card.className = "candidat-card";
+    const messageHtml = candidat.message
+      ? `<p class="candidat-message">« ${candidat.message} »</p>`
+      : "";
+
     card.innerHTML = `
       <span class="candidat-nom">${candidat.user_nom}</span>
       <div class="candidat-infos">
@@ -122,6 +126,7 @@ function afficherCandidats() {
           <li>${candidat.user_email}</li>
           <li>${candidat.telephone || "Non renseigné"}</li>
         </ul>
+        ${messageHtml}
       </div>
       <div class="candidat-actions">
         <button class="btn-yn yes${candidat.status === "acceptée" ? " active" : ""}" data-id="${candidat.id}" data-action="acceptée">Y</button>

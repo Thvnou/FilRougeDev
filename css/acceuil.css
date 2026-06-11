@@ -44,14 +44,37 @@ div.info-utilisateur {
   color: aliceblue;
 }
 
-.bouton-mes-candidatures {
+.menu-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-right: 5%;
+}
+
+.bouton-mes-candidatures {
   padding: 10px 16px;
   font-size: 15px;
   border: none;
   border-radius: 12px;
   outline: none;
   cursor: pointer;
+}
+
+.bouton-connexion-header {
+  padding: 10px 16px;
+  font-size: 15px;
+  border: 1.5px solid aliceblue;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: aliceblue;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bouton-connexion-header:hover {
+  background: aliceblue;
+  color: rgb(0, 31, 63);
 }
 
 /* ── Barre de recherche + image de fond ── */
@@ -418,8 +441,13 @@ section.carte-agences {
     font-size: 0.78rem;
   }
 
-  .bouton-mes-candidatures {
+  .menu-actions {
     margin-right: 4%;
+    gap: 6px;
+  }
+
+  .bouton-mes-candidatures,
+  .bouton-connexion-header {
     padding: 8px 10px;
     font-size: 12px;
   }

@@ -1,0 +1,36 @@
+/* ========================================================================
+   biens-favoris.css
+   Réutilise les styles communs de la page annonces (grille de cartes,
+   barre de navigation, bandeau utilisateur...) et ajoute les ajustements
+   propres à la page "Mes biens favoris".
+   ======================================================================== */
+
+@import url("annonces.css");
+
+.favoris-section {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* Message affiché quand la grille est vide ou en cours de chargement */
+.annonces-grid > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1rem;
+  padding: 40px 0;
+}
+
+.favoris-section .lien-annonces {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  background: rgb(0, 31, 63);
+  color: aliceblue;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.favoris-section .lien-annonces:hover {
+  opacity: 0.85;
+}

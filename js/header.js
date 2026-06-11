@@ -49,14 +49,24 @@ function initLogoutButton() {
 
 /**
  * Branche les liens de la barre supérieure :
+ * - #nav-accueil : redirige vers la page d'accueil
  * - #nav-agences : affiche la liste des agences (GET /api/agences)
- * - #nav-favoris : redirige vers les annonces favorites
+ * - #nav-favoris : redirige vers la page "Mes biens favoris" si connecté,
+ *   ou vers la création de compte pour un visiteur
  * - #nav-compte  : redirige vers l'espace personnel (ou la connexion)
  */
 function initTopNavLinks() {
+  const lienAccueil = document.getElementById("nav-accueil");
   const lienAgences = document.getElementById("nav-agences");
   const lienFavoris = document.getElementById("nav-favoris");
   const lienCompte = document.getElementById("nav-compte");
+
+  if (lienAccueil) {
+    lienAccueil.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "accueil.html";
+    });
+  }
 
   if (lienAgences) {
     lienAgences.addEventListener("click", async (e) => {
@@ -77,7 +87,12 @@ function initTopNavLinks() {
   if (lienFavoris) {
     lienFavoris.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "annonces.html?favoris=1";
+      const session = getSession();
+      if (session) {
+        window.location.href = "biens-favoris.html";
+      } else {
+        window.location.href = "creation-compte.html";
+      }
     });
   }
 
@@ -95,19 +110,39 @@ function initTopNavLinks() {
 }
 
 /**
- * Sur l'accueil, le bouton "Mes candidatures" n'a de sens que pour un
- * client connecté : on le masque sinon.
+ * Sur l'accueil, le bloc ".menu-actions" contient deux boutons :
+ * - "Mes candidatures" : affiché uniquement pour un client connecté ;
+ * - "Connexion" : affiché pour un visiteur non connecté, renvoie vers
+ *   connexion.html.
+ * Dans tous les cas, on conserve la place des boutons dans la mise en page
+ * (header.menu utilise justify-content: space-between) en utilisant
+ * `visibility: hidden` plutôt que `display: none`, pour que le bloc
+ * info-utilisateur reste centré.
  */
 function initMesCandidaturesButton() {
-  const btn = document.querySelector(".bouton-mes-candidatures");
-  if (!btn) return;
+  const btnCandidatures = document.querySelector(".bouton-mes-candidatures");
+  const btnConnexion = document.getElementById("btn-connexion-header");
 
   const session = getSession();
+
   if (session && session.role === "client") {
-    btn.addEventListener("click", () => {
-      window.location.href = "candidatures-client.html";
-    });
+    if (btnCandidatures) {
+      btnCandidatures.addEventListener("click", () => {
+        window.location.href = "candidatures-client.html";
+      });
+    }
+    if (btnConnexion) btnConnexion.style.visibility = "hidden";
+  } else if (!session) {
+    if (btnCandidatures) btnCandidatures.style.visibility = "hidden";
+    if (btnConnexion) {
+      btnConnexion.addEventListener("click", () => {
+        window.location.href = "connexion.html";
+      });
+    }
   } else {
-    btn.style.display = "none";
+    // Connecté mais pas en tant que client (commercial / direction) : on
+    // masque les deux boutons tout en conservant leur place.
+    if (btnCandidatures) btnCandidatures.style.visibility = "hidden";
+    if (btnConnexion) btnConnexion.style.visibility = "hidden";
   }
 }

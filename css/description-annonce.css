@@ -170,6 +170,188 @@ header.menu {
   color: #1a1a1a;
 }
 
+/* ── Modale : formulaire de candidature ── */
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 31, 63, 0.55);
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-candidature {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.modal-fermer {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+
+.modal-fermer:hover {
+  background: #f0f0f0;
+  color: #001f3f;
+}
+
+.modal-candidature-corps h2 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  color: rgb(0, 31, 63);
+}
+
+.modal-candidature-sous-titre {
+  margin: 0 0 24px;
+  font-size: 0.88rem;
+  color: #777;
+}
+
+#form-candidature .champ {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+#form-candidature label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#form-candidature .requis {
+  color: #c0392b;
+}
+
+#form-candidature input,
+#form-candidature textarea {
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+#form-candidature input:focus,
+#form-candidature textarea:focus {
+  border-color: rgb(0, 31, 63);
+}
+
+#form-candidature textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#form-candidature .champ.invalide input,
+#form-candidature .champ.invalide textarea {
+  border-color: #c0392b;
+}
+
+.champ-erreur {
+  min-height: 1.1em;
+  font-size: 0.78rem;
+  color: #c0392b;
+}
+
+.modal-candidature-note {
+  margin: 4px 0 22px;
+  font-size: 0.78rem;
+  color: #999;
+}
+
+.modal-candidature-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-annuler {
+  padding: 10px 20px;
+  background: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-annuler:hover {
+  background: #f5f5f5;
+}
+
+.modal-candidature-actions .btn-envoyer,
+.modal-candidature-succes .btn-envoyer {
+  padding: 10px 22px;
+  background: rgb(0, 31, 63);
+  color: aliceblue;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.modal-candidature-actions .btn-envoyer:hover,
+.modal-candidature-succes .btn-envoyer:hover {
+  background: rgb(221, 197, 77);
+  color: rgb(0, 31, 63);
+}
+
+.modal-candidature-succes {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.succes-icone {
+  margin: 0 0 10px;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #2e8b7a;
+}
+
+.succes-texte {
+  margin: 0 0 24px;
+  font-size: 1rem;
+  color: #333;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 700px) {
@@ -197,5 +379,18 @@ header.menu {
 
   .detail-annonce {
     padding: 20px 4%;
+  }
+
+  .modal-candidature {
+    padding: 24px 18px;
+  }
+
+  .modal-candidature-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-candidature-actions .btn-annuler,
+  .modal-candidature-actions .btn-envoyer {
+    width: 100%;
   }
 }
