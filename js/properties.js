@@ -7,20 +7,30 @@
 
 /**
  * Récupère la liste de tous les biens (GET /api/properties).
+ * Gère les formats de réponse variés (liste directe ou wrapper {data: [...]}).
  */
 async function fetchProperties() {
   const res = await fetch(`${API_BASE_URL}/api/properties`);
   if (!res.ok) throw new Error("Impossible de charger les annonces.");
-  return res.json();
+  const data = await res.json();
+  // Gérer le cas où la réponse est un wrapper {data: [...]}
+  if (data.data && Array.isArray(data.data)) return data.data;
+  // Gérer le cas où c'est une liste directe
+  if (Array.isArray(data)) return data;
+  // Fallback: retourner un tableau vide
+  return [];
 }
 
 /**
  * Récupère un bien précis (GET /api/properties/{id}).
+ * Gère les formats de réponse variés (objet direct ou wrapper data).
  */
 async function fetchProperty(id) {
   const res = await fetch(`${API_BASE_URL}/api/properties/${id}`);
   if (!res.ok) throw new Error("Bien introuvable.");
-  return res.json();
+  const data = await res.json();
+  // Gérer le cas où la réponse est un wrapper {data: {...}}
+  return data.data ? data.data : data;
 }
 
 /**

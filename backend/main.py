@@ -155,8 +155,44 @@ def predict_price(data: PropertyEstimateInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur IA : {str(e)}")
 
-
-# --- GESTION DES AGENCES & DES UTILISATEURS (SYNC LIVE AVEC TES TABLES SQL) ---
+@app.get("/api/properties/{property_id}")
+def get_one_property(property_id: int):
+    """Récupère un bien immobilier spécifique par son ID pour la page détail"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        # On récupère toutes les colonnes du bien spécifique
+        cursor.execute("SELECT * FROM property WHERE id = %s;", (property_id,))
+        row = cursor.fetchone()
+        
+        if not row:
+            raise HTTPException(status_code=404, detail="Bien immobilier introuvable")
+            
+        # Si ton curseur est configuré pour renvoyer des dictionnaires
+        if isinstance(row, dict):
+            return row
+            
+        # Si ton curseur renvoie un tuple (liste brute), on le convertit en dictionnaire 
+        # pour que le JavaScript de Claude lise facilement les clés de ta table SQL
+        return {
+            "id": row[0],
+            "title": row[1],
+            "description": row[2],
+            "category": row[3],
+            "type": row[4],
+            "price": row[5],
+            "area": row[6],
+            "rooms": row[7],
+            "city": row[8],
+            "postcode": row[9],
+            "user_id": row[10],
+            "status": row[11] if len(row) > 11 else "Disponible"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur BDD : {str(e)}")
+    finally:
+        cursor.close()
+        conn.close()
 
 @app.get("/api/agences")
 def get_all_agences():

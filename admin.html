@@ -3,368 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YMMO - Espace Super-Administrateur</title>
+    <title>YMMO - Espace Administrateur</title>
     <link rel="stylesheet" href="css/connexion.css" />
-    <style>
-      body {
-        background-color: #f5f7fb;
-        color: #1a2634;
-      }
-
-      .admin-top-page {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
-        background: linear-gradient(90deg, rgba(0,31,63,1) 0%, rgba(18,52,89,1) 100%);
-        color: #fff;
-      }
-
-      .admin-top-page .info p {
-        margin: 0;
-        font-size: 0.95rem;
-        opacity: 0.92;
-      }
-
-      nav.nav-top-page {
-        display: flex;
-        list-style: none;
-        gap: 1.5rem;
-      }
-
-      nav.nav-top-page li {
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 0.95rem;
-      }
-
-      header.menu {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        background-color: rgb(0, 31, 63);
-        padding: 16px 5%;
-      }
-
-      .admin-actions {
-        display: flex;
-        justify-content: flex-end;
-        gap: 12px;
-      }
-
-      .btn-secondary,
-      .btn-destruct {
-        border: none;
-        border-radius: 10px;
-        padding: 12px 18px;
-        font-size: 0.95rem;
-        cursor: pointer;
-      }
-
-      .btn-secondary {
-        background-color: rgba(255, 255, 255, 0.14);
-        color: #fff;
-      }
-
-      .btn-secondary:hover {
-        background-color: rgba(255, 255, 255, 0.24);
-      }
-
-      .btn-destruct {
-        background-color: #c0392b;
-        color: #fff;
-      }
-
-      .btn-destruct:hover {
-        opacity: 0.92;
-      }
-
-      .dashboard-wrapper {
-        padding: 30px 5%;
-        max-width: 1300px;
-        margin: 0 auto;
-      }
-
-      .admin-hero {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-        margin: 30px 0;
-      }
-
-      .hero-card {
-        flex: 1 1 320px;
-        background-color: #ffffff;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 20px 40px rgba(15, 35, 62, 0.08);
-        border: 1px solid rgba(0, 31, 63, 0.08);
-      }
-
-      .hero-card h2 {
-        margin: 0 0 10px;
-        font-size: 1.85rem;
-        color: #001f3f;
-      }
-
-      .hero-card p {
-        margin: 0;
-        color: #4a5a6e;
-        line-height: 1.7;
-      }
-
-      .panel {
-        background: white;
-        border-radius: 22px;
-        box-shadow: 0 24px 48px rgba(15, 35, 62, 0.08);
-        padding: 32px;
-        margin-bottom: 32px;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-      }
-
-      .panel .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 24px;
-        color: #001f3f;
-      }
-
-      .kpi-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-        margin-bottom: 28px;
-      }
-
-      .kpi-card {
-        background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        border-radius: 18px;
-        padding: 24px;
-        min-height: 125px;
-      }
-
-      .kpi-card h3 {
-        margin: 0 0 16px;
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
-        color: #62758c;
-        text-transform: uppercase;
-      }
-
-      .kpi-card .value {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #001f3f;
-      }
-
-      .chart-panel {
-        background: white;
-        border-radius: 18px;
-        padding: 24px;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        margin-bottom: 28px;
-      }
-
-      .chart-panel h3 {
-        margin: 0 0 18px;
-        color: #001f3f;
-        font-size: 1.1rem;
-      }
-
-      .chart-panel .chart-frame {
-        position: relative;
-        height: 340px;
-      }
-
-      .ia-insight-box {
-        background: #f5f3fb;
-        border-left: 5px solid #6c5ce7;
-        padding: 22px;
-        border-radius: 16px;
-        margin-bottom: 28px;
-      }
-
-      .ia-insight-box strong {
-        color: #001f3f;
-      }
-
-      .ia-formula {
-        margin-top: 14px;
-        display: inline-block;
-        background: white;
-        padding: 12px 14px;
-        border-radius: 14px;
-        color: #1a2634;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        font-family: monospace;
-      }
-
-      .form-box {
-        background: #f8faff;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        padding: 26px;
-        border-radius: 18px;
-        margin-bottom: 28px;
-      }
-
-      .form-box h3 {
-        margin-top: 0;
-        margin-bottom: 24px;
-        font-size: 1.05rem;
-        color: #001f3f;
-      }
-
-      .form-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        align-items: flex-end;
-      }
-
-      .form-control {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 200px;
-        min-width: 200px;
-      }
-
-      .form-control label {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-        color: #4a5a6e;
-        font-weight: 700;
-      }
-
-      .form-control input,
-      .form-control select {
-        border-radius: 14px;
-        border: 1px solid #d9e2f1;
-        padding: 14px 16px;
-        font-size: 0.95rem;
-        background: white;
-      }
-
-      .btn-add {
-        min-width: 160px;
-        align-self: flex-start;
-      }
-
-      .filter-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 14px;
-        background: #eef4ff;
-        padding: 18px 20px;
-        border-radius: 16px;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        margin-bottom: 24px;
-      }
-
-      .filter-wrapper label {
-        margin: 0;
-        color: #001f3f;
-        font-weight: 700;
-      }
-
-      .filter-input {
-        flex: 1;
-        min-width: 240px;
-        border-radius: 14px;
-        border: 1px solid #d9e2f1;
-        padding: 14px 16px;
-      }
-
-      .grid-agences {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 22px;
-      }
-
-      .agence-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 22px;
-        border: 1px solid rgba(0, 31, 63, 0.08);
-        box-shadow: 0 18px 30px rgba(15, 35, 62, 0.05);
-      }
-
-      .agence-card.hidden {
-        display: none;
-      }
-
-      .agence-card h3 {
-        margin: 0 0 16px;
-        color: #001f3f;
-        font-size: 1.05rem;
-      }
-
-      .agent-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        align-items: center;
-        padding: 14px 0;
-        border-bottom: 1px solid #eff4fb;
-      }
-
-      .agent-row:last-child {
-        border-bottom: none;
-      }
-
-      .agent-name {
-        font-weight: 700;
-        color: #001f3f;
-      }
-
-      .agent-role {
-        color: #556a82;
-        font-size: 0.95rem;
-      }
-
-      .btn-delete {
-        color: #c0392b;
-        text-decoration: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 700;
-      }
-
-      @media (max-width: 980px) {
-        header.menu {
-          grid-template-columns: 1fr;
-          text-align: center;
-          gap: 16px;
-        }
-
-        .admin-actions {
-          justify-content: center;
-        }
-
-        .dashboard-wrapper {
-          padding: 24px 4%;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .kpi-container,
-        .form-group,
-        .admin-hero {
-          grid-template-columns: 1fr;
-        }
-
-        .dashboard-wrapper {
-          padding: 20px 4%;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
     <section class="admin-top-page top-page">
       <div class="info">
-        <p>Accès Super-Administrateur — supervision en temps réel</p>
+        <p>Compte Administrateur </p>
       </div>
       <nav class="nav-top-page">
         <li>Nos agences</li>
@@ -374,28 +20,19 @@
     </section>
 
     <header class="menu">
-      <img src="images/Logo.png" alt="logo YMMO" class="logo-barre-menu" />
+      <a href="accueil.html" title="Accueil" style="display:inline-block;">
+        <img src="images/Logo.png" alt="logo YMMO" class="logo-barre-menu" style="cursor: pointer;" />
+      </a>
       <div class="info-utilisateur">
         <h1>YMMO Admin</h1>
-        <h3>Super-Administrateur</h3>
+        <h3>Administrateur</h3>
       </div>
       <div class="admin-actions">
-        <button class="btn-secondary" onclick="goToHome()">Page Principale</button>
         <button class="btn-destruct" onclick="logoutAdmin()">Déconnexion</button>
       </div>
     </header>
 
     <main class="dashboard-wrapper">
-      <section class="admin-hero">
-        <div class="hero-card">
-          <h2>Vue globale</h2>
-          <p>Bienvenue sur votre espace Super-Administrateur. Contrôlez les KPI financiers, analysez les tendances du marché et pilotez les équipes d’agence depuis une interface cohérente avec la charte YMMO.</p>
-        </div>
-        <div class="hero-card">
-          <h2>Navigation intuitive</h2>
-          <p>Après une connexion réussie, redirigez vers <strong>admin.html</strong> pour un accès sécurisé. Le bouton Page Principale conserve la session et le bouton Déconnexion vide le stockage avant de renvoyer vers la page de login.</p>
-        </div>
-      </section>
 
       <section class="panel">
         <h2 class="section-title">Section Analyse Financière & Moteur Prédictif</h2>
@@ -416,7 +53,7 @@
         </div>
 
         <div class="chart-panel">
-          <h3>Graphique Chart.js des prix constatés</h3>
+          <h3>Graphique des prix en fonction des biens</h3>
           <div class="chart-frame">
             <canvas id="ymmoAnalyticsChart"></canvas>
           </div>
@@ -424,11 +61,56 @@
 
         <div class="ia-insight-box">
           <strong>Insight IA :</strong>
-          <div id="ia-explanation">Chargement de l'analyse prédictive...</div>
-          <div id="ia-formula-text" class="ia-formula">Prix estimé = ...</div>
+          <div id="ia-explanation">
+            <table class="ia-table">
+              <thead>
+                <tr>
+                  <th>Indicateur Prédictif</th>
+                  <th>Valeur Déterminée</th>
+                  <th>Impact Métier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Valeur du m²</td>
+                  <td id="ia-value-m2">3 720 €</td>
+                  <td>Impact linéaire basé sur la surface habitable du bien.</td>
+                </tr>
+                <tr>
+                  <td>Valeur par Pièce</td>
+                  <td id="ia-value-room">14 200 €</td>
+                  <td>Impact incrémental lié à la configuration et au nombre de pièces.</td>
+                </tr>
+                <tr>
+                  <td>Constante de Marché</td>
+                  <td id="ia-value-base">45 000 €</td>
+                  <td>Seuil de base fixe appliqué à chaque estimation (frais fixes/zone).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="ia-formula-text" class="ia-formula" style="display:none;">Prix estimé = ...</div>
         </div>
 
         <h3>Journal d'Audit des Transactions</h3>
+        <div class="filter-wrapper" style="gap: 24px; justify-content: flex-start;">
+          <div class="form-control" style="min-width: 200px; flex: 0 0 auto;">
+            <label for="audit-sort-criteria" style="margin-bottom: 8px;">Trier par...</label>
+            <select id="audit-sort-criteria" class="filter-input" onchange="sortAuditTransactions()" style="padding: 10px 14px;">
+              <option value="">-- Aucun tri (Top 5) --</option>
+              <option value="prix">Prix</option>
+              <option value="pieces">Pièces</option>
+              <option value="superficie">Superficie</option>
+            </select>
+          </div>
+          <div class="form-control" style="min-width: 200px; flex: 0 0 auto;">
+            <label for="audit-sort-order" style="margin-bottom: 8px;">Ordre...</label>
+            <select id="audit-sort-order" class="filter-input" onchange="sortAuditTransactions()" style="padding: 10px 14px;">
+              <option value="">-- Croissant --</option>
+              <option value="desc">Décroissant</option>
+            </select>
+          </div>
+        </div>
         <table>
           <thead>
             <tr>
@@ -525,14 +207,21 @@
               const coefRoom = aiData.ia_insights.value_of_one_room || aiData.ia_insights.coefficient_pieces || 0;
               const intercept = aiData.ia_insights.base_price || aiData.ia_insights.constante || 0;
 
-              document.getElementById("ia-explanation").innerHTML = `Notre modèle de <strong>Régression Linéaire Multiple</strong> a analysé l'historique de la table transactions. Il a déterminé que chaque mètre carré apporte une valeur brute moyenne de <strong>${Math.round(coefM2).toLocaleString('fr-FR')} €</strong>, et chaque pièce supplémentaire ajoute une plus-value de <strong>${Math.round(coefRoom).toLocaleString('fr-FR')} €</strong>.`;
+              // Update IA table cells with API values
+              document.getElementById("ia-value-m2").innerText = `${Math.round(coefM2).toLocaleString('fr-FR')} €`;
+              document.getElementById("ia-value-room").innerText = `${Math.round(coefRoom).toLocaleString('fr-FR')} €`;
+              document.getElementById("ia-value-base").innerText = `${Math.round(intercept).toLocaleString('fr-FR')} €`;
+              
+              // Update hidden formula for reference
               document.getElementById("ia-formula-text").innerText = `Prix Estimé = (${Math.round(coefM2)} * Surface) + (${Math.round(coefRoom)} * Pièces) + (${Math.round(intercept)})`;
             }
 
             const chartData = aiData.chart_data || aiData.donnees_graphique || [];
             const tableBody = document.getElementById("transactions-table-body");
-            tableBody.innerHTML = "";
-
+            
+            // Store full transaction data globally for filtering
+            window.allTransactions = chartData;
+            
             if (chartData.length === 0) {
               tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #7f8c8d;">Aucune transaction historique.</td></tr>`;
               buildAnalyticsChart([], []);
@@ -547,16 +236,9 @@
               });
 
               buildAnalyticsChart(labels, dataPrices);
-
-              chartData.forEach(row => {
-                const surface = row.area || row.surface || row[0] || 0;
-                const pieces = row.rooms || row.pieces || row[1] || 0;
-                const prix = row.final_price || row.prix || row.price || row[2] || 0;
-
-                const tr = document.createElement("tr");
-                tr.innerHTML = `<td><strong>${surface} m²</strong></td><td>${pieces} p.</td><td>${prix.toLocaleString('fr-FR')} €</td>`;
-                tableBody.appendChild(tr);
-              });
+              
+              // Display only the 5 most recent transactions by default
+              displayAuditTransactions(chartData.slice(0, 5));
             }
             return;
           }
@@ -616,15 +298,85 @@
         document.getElementById("kpi-volume").innerText = "11 340 000 €";
         document.getElementById("kpi-count").innerText = "22 ventes";
         document.getElementById("kpi-avg").innerText = "4 210 € / m²";
-        document.getElementById("ia-explanation").innerHTML = "Chaque m² apporte environ <strong>3 720 €</strong> et chaque pièce génère en moyenne <strong>14 200 €</strong> de plus-value brute calculée.";
+        
+        // Update IA table with fallback values
+        document.getElementById("ia-value-m2").innerText = "3 720 €";
+        document.getElementById("ia-value-room").innerText = "14 200 €";
+        document.getElementById("ia-value-base").innerText = "45 000 €";
         document.getElementById("ia-formula-text").innerText = "Prix Estimé = (3720.5 * Surface) + (14200 * Pièces) + (45000)";
-        const tableBody = document.getElementById("transactions-table-body");
-        tableBody.innerHTML = `
-            <tr><td><strong>165 m²</strong></td><td>6 p.</td><td>910 000 €</td></tr>
-            <tr><td><strong>52 m²</strong></td><td>2 p.</td><td>335 000 €</td></tr>
-            <tr><td><strong>19 m²</strong></td><td>1 p.</td><td>285 000 €</td></tr>
-        `;
+        
+        const fallbackData = [
+          { area: 165, rooms: 6, final_price: 910000 },
+          { area: 52, rooms: 2, final_price: 335000 },
+          { area: 19, rooms: 1, final_price: 285000 }
+        ];
+        window.allTransactions = fallbackData;
+        
+        displayAuditTransactions(fallbackData);
         buildAnalyticsChart(["165 m²", "52 m²", "19 m²"], [910000, 335000, 285000]);
+      }
+      
+      function displayAuditTransactions(transactions) {
+        const tableBody = document.getElementById("transactions-table-body");
+        tableBody.innerHTML = "";
+        
+        if (transactions.length === 0) {
+          tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #7f8c8d;">Aucune transaction trouvée.</td></tr>`;
+          return;
+        }
+        
+        transactions.forEach(row => {
+          const surface = row.area || row.surface || row[0] || 0;
+          const pieces = row.rooms || row.pieces || row[1] || 0;
+          const prix = row.final_price || row.prix || row.price || row[2] || 0;
+
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td><strong>${surface} m²</strong></td><td>${pieces} p.</td><td>${prix.toLocaleString('fr-FR')} €</td>`;
+          tableBody.appendChild(tr);
+        });
+      }
+      
+      function sortAuditTransactions() {
+        const criteriaSelect = document.getElementById("audit-sort-criteria");
+        const orderSelect = document.getElementById("audit-sort-order");
+        const criteria = criteriaSelect.value;
+        const order = orderSelect.value;
+        
+        if (!window.allTransactions || window.allTransactions.length === 0) return;
+        
+        let toDisplay = [...window.allTransactions];
+        
+        // If both selects are at default, show top 5
+        if (!criteria && !order) {
+          toDisplay = window.allTransactions.slice(0, 5);
+        } else {
+          // Sort based on selected criteria
+          if (criteria) {
+            toDisplay.sort((a, b) => {
+              let aVal, bVal;
+              
+              if (criteria === "prix") {
+                aVal = a.final_price || a.prix || a.price || a[2] || 0;
+                bVal = b.final_price || b.prix || b.price || b[2] || 0;
+              } else if (criteria === "pieces") {
+                aVal = a.rooms || a.pieces || a[1] || 0;
+                bVal = b.rooms || b.pieces || b[1] || 0;
+              } else if (criteria === "superficie") {
+                aVal = a.area || a.surface || a[0] || 0;
+                bVal = b.area || b.surface || b[0] || 0;
+              }
+              
+              // Apply order (default ascending, desc if selected)
+              if (order === "desc") {
+                return bVal - aVal;
+              } else {
+                return aVal - bVal;
+              }
+            });
+          }
+        }
+        
+        displayAuditTransactions(toDisplay);
       }
 
       async function loadAgencesAndAgents() {
@@ -694,7 +446,14 @@
         const cards = document.querySelectorAll(".agence-card");
         cards.forEach(card => {
           const content = card.getAttribute("data-search") || "";
-          card.classList.toggle("hidden", !content.includes(query));
+          const isMatch = query === "" || content.includes(query);
+          if (isMatch) {
+            card.style.display = "";
+            card.classList.remove("hidden");
+          } else {
+            card.style.display = "none";
+            card.classList.add("hidden");
+          }
         });
       }
 

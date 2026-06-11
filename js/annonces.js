@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function chargerAnnonces() {
   const grille = document.querySelector(".annonces-grid");
   try {
-    toutesLesAnnonces = await fetchProperties();
+    const data = await fetchProperties();
+    toutesLesAnnonces = data || [];
+    // Filtrer les biens vendus
+    toutesLesAnnonces = toutesLesAnnonces.filter(prop => prop.status !== "Vendu" && prop.status !== "Sold");
   } catch (err) {
     console.error(err);
     if (grille) {
