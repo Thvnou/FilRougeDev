@@ -10,6 +10,7 @@
 const ROLE_LABELS = {
   direction: "Administrateur",
   admin: "Administrateur",
+  super_admin: "Super-Administrateur",
   commercial: "Commercial",
   client: "Client",
 };
@@ -17,6 +18,7 @@ const ROLE_LABELS = {
 const ROLE_HOME_PAGE = {
   direction: "compte-admin.html",
   admin: "compte-admin.html",
+  super_admin: "admin.html",
   commercial: "compte-commercial.html",
   client: "compte-client.html",
 };

@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YMMO - Espace Super-Administrateur</title>
+    <link rel="stylesheet" href="css/connexion.css" />
+    <style>
+      body {
+        background-color: #f5f7fb;
+        color: #1a2634;
+      }
+
+      .admin-top-page {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        background: linear-gradient(90deg, rgba(0,31,63,1) 0%, rgba(18,52,89,1) 100%);
+        color: #fff;
+      }
+
+      .admin-top-page .info p {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.92;
+      }
+
+      nav.nav-top-page {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav.nav-top-page li {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.95rem;
+      }
+
+      header.menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        background-color: rgb(0, 31, 63);
+        padding: 16px 5%;
+      }
+
+      .admin-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .btn-secondary,
+      .btn-destruct {
+        border: none;
+        border-radius: 10px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        cursor: pointer;
+      }
+
+      .btn-secondary {
+        background-color: rgba(255, 255, 255, 0.14);
+        color: #fff;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.24);
+      }
+
+      .btn-destruct {
+        background-color: #c0392b;
+        color: #fff;
+      }
+
+      .btn-destruct:hover {
+        opacity: 0.92;
+      }
+
+      .dashboard-wrapper {
+        padding: 30px 5%;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .admin-hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .hero-card {
+        flex: 1 1 320px;
+        background-color: #ffffff;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 20px 40px rgba(15, 35, 62, 0.08);
+        border: 1px solid rgba(0, 31, 63, 0.08);
+      }
+
+      .hero-card h2 {
+        margin: 0 0 10px;
+        font-size: 1.85rem;
+        color: #001f3f;
+      }
+
+      .hero-card p {
+        margin: 0;
+        color: #4a5a6e;
+        line-height: 1.7;
+      }
+
+      .panel {
+        background: white;
+        border-radius: 22px;
+        box-shadow: 0 24px 48px rgba(15, 35, 62, 0.08);
+        padding: 32px;
+        margin-bottom: 32px;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+      }
+
+      .panel .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        color: #001f3f;
+      }
+
+      .kpi-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-bottom: 28px;
+      }
+
+      .kpi-card {
+        background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        border-radius: 18px;
+        padding: 24px;
+        min-height: 125px;
+      }
+
+      .kpi-card h3 {
+        margin: 0 0 16px;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        color: #62758c;
+        text-transform: uppercase;
+      }
+
+      .kpi-card .value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #001f3f;
+      }
+
+      .chart-panel {
+        background: white;
+        border-radius: 18px;
+        padding: 24px;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        margin-bottom: 28px;
+      }
+
+      .chart-panel h3 {
+        margin: 0 0 18px;
+        color: #001f3f;
+        font-size: 1.1rem;
+      }
+
+      .chart-panel .chart-frame {
+        position: relative;
+        height: 340px;
+      }
+
+      .ia-insight-box {
+        background: #f5f3fb;
+        border-left: 5px solid #6c5ce7;
+        padding: 22px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+      }
+
+      .ia-insight-box strong {
+        color: #001f3f;
+      }
+
+      .ia-formula {
+        margin-top: 14px;
+        display: inline-block;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 14px;
+        color: #1a2634;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        font-family: monospace;
+      }
+
+      .form-box {
+        background: #f8faff;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        padding: 26px;
+        border-radius: 18px;
+        margin-bottom: 28px;
+      }
+
+      .form-box h3 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-size: 1.05rem;
+        color: #001f3f;
+      }
+
+      .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: flex-end;
+      }
+
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 200px;
+        min-width: 200px;
+      }
+
+      .form-control label {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        color: #4a5a6e;
+        font-weight: 700;
+      }
+
+      .form-control input,
+      .form-control select {
+        border-radius: 14px;
+        border: 1px solid #d9e2f1;
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        background: white;
+      }
+
+      .btn-add {
+        min-width: 160px;
+        align-self: flex-start;
+      }
+
+      .filter-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        background: #eef4ff;
+        padding: 18px 20px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        margin-bottom: 24px;
+      }
+
+      .filter-wrapper label {
+        margin: 0;
+        color: #001f3f;
+        font-weight: 700;
+      }
+
+      .filter-input {
+        flex: 1;
+        min-width: 240px;
+        border-radius: 14px;
+        border: 1px solid #d9e2f1;
+        padding: 14px 16px;
+      }
+
+      .grid-agences {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 22px;
+      }
+
+      .agence-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 22px;
+        border: 1px solid rgba(0, 31, 63, 0.08);
+        box-shadow: 0 18px 30px rgba(15, 35, 62, 0.05);
+      }
+
+      .agence-card.hidden {
+        display: none;
+      }
+
+      .agence-card h3 {
+        margin: 0 0 16px;
+        color: #001f3f;
+        font-size: 1.05rem;
+      }
+
+      .agent-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid #eff4fb;
+      }
+
+      .agent-row:last-child {
+        border-bottom: none;
+      }
+
+      .agent-name {
+        font-weight: 700;
+        color: #001f3f;
+      }
+
+      .agent-role {
+        color: #556a82;
+        font-size: 0.95rem;
+      }
+
+      .btn-delete {
+        color: #c0392b;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      @media (max-width: 980px) {
+        header.menu {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 16px;
+        }
+
+        .admin-actions {
+          justify-content: center;
+        }
+
+        .dashboard-wrapper {
+          padding: 24px 4%;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .kpi-container,
+        .form-group,
+        .admin-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .dashboard-wrapper {
+          padding: 20px 4%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="admin-top-page top-page">
+      <div class="info">
+        <p>Accès Super-Administrateur — supervision en temps réel</p>
+      </div>
+      <nav class="nav-top-page">
+        <li>Nos agences</li>
+        <li>Statistiques</li>
+        <li>Personnel</li>
+      </nav>
+    </section>
+
+    <header class="menu">
+      <img src="images/Logo.png" alt="logo YMMO" class="logo-barre-menu" />
+      <div class="info-utilisateur">
+        <h1>YMMO Admin</h1>
+        <h3>Super-Administrateur</h3>
+      </div>
+      <div class="admin-actions">
+        <button class="btn-secondary" onclick="goToHome()">Page Principale</button>
+        <button class="btn-destruct" onclick="logoutAdmin()">Déconnexion</button>
+      </div>
+    </header>
+
+    <main class="dashboard-wrapper">
+      <section class="admin-hero">
+        <div class="hero-card">
+          <h2>Vue globale</h2>
+          <p>Bienvenue sur votre espace Super-Administrateur. Contrôlez les KPI financiers, analysez les tendances du marché et pilotez les équipes d’agence depuis une interface cohérente avec la charte YMMO.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Navigation intuitive</h2>
+          <p>Après une connexion réussie, redirigez vers <strong>admin.html</strong> pour un accès sécurisé. Le bouton Page Principale conserve la session et le bouton Déconnexion vide le stockage avant de renvoyer vers la page de login.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="section-title">Section Analyse Financière & Moteur Prédictif</h2>
+
+        <div class="kpi-container">
+          <div class="kpi-card">
+            <h3>Chiffre d'Affaires Global</h3>
+            <div id="kpi-volume" class="value">Chargement...</div>
+          </div>
+          <div class="kpi-card">
+            <h3>Transactions Totales</h3>
+            <div id="kpi-count" class="value">Chargement...</div>
+          </div>
+          <div class="kpi-card">
+            <h3>Prix Moyen Constaté</h3>
+            <div id="kpi-avg" class="value">Chargement...</div>
+          </div>
+        </div>
+
+        <div class="chart-panel">
+          <h3>Graphique Chart.js des prix constatés</h3>
+          <div class="chart-frame">
+            <canvas id="ymmoAnalyticsChart"></canvas>
+          </div>
+        </div>
+
+        <div class="ia-insight-box">
+          <strong>Insight IA :</strong>
+          <div id="ia-explanation">Chargement de l'analyse prédictive...</div>
+          <div id="ia-formula-text" class="ia-formula">Prix estimé = ...</div>
+        </div>
+
+        <h3>Journal d'Audit des Transactions</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Surface (m²)</th>
+              <th>Nombre de pièces</th>
+              <th>Prix Constaté</th>
+            </tr>
+          </thead>
+          <tbody id="transactions-table-body">
+            <tr><td colspan="3" style="text-align: center; color: #7f8c8d;">Chargement de l'historique...</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2 class="section-title">Section Gestion du Personnel & Effectifs</h2>
+
+        <div class="form-box">
+          <h3>➕ Recruter un nouvel agent immobilier</h3>
+          <div class="form-group">
+            <div class="form-control">
+              <label for="agentName">Nom Complet</label>
+              <input type="text" id="agentName" placeholder="Ex: Lucas Martin" />
+            </div>
+            <div class="form-control">
+              <label for="agentRole">Rôle / Rang</label>
+              <input type="text" id="agentRole" placeholder="Ex: Commercial Senior" />
+            </div>
+            <div class="form-control">
+              <label for="agentAgence">Affectation Agence</label>
+              <select id="agentAgence"></select>
+            </div>
+            <button class="btn-add" onclick="addAgentToDB()">Ajouter</button>
+          </div>
+        </div>
+
+        <div class="filter-wrapper">
+          <label for="searchAgence">Filtrer une filiale :</label>
+          <input type="text" id="searchAgence" class="filter-input" placeholder="Tapez une ville... (Ex: Paris, Lyon)" oninput="filterAgences()" />
+        </div>
+
+        <h3>Cartographie des Effectifs par Filiale</h3>
+        <div id="grid-agences-container" class="grid-agences"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const API_DASHBOARD_URL = "http://localhost:8000/api/admin/analytics/dashboard";
+      const API_AGENTS_URL = "http://localhost:8000/api/agents";
+      const API_AGENCES_URL = "http://localhost:8000/api/agences";
+      let analyticsChart = null;
+
+      function goToHome() {
+        window.location.href = 'accueil.html';
+      }
+
+      function logoutAdmin() {
+        localStorage.clear();
+        window.location.href = 'connexion.html';
+      }
+
+      function loadDashboardData() {
+        loadAnalyticsAndIA();
+        loadAgencesAndAgents();
+      }
+
+      async function loadAnalyticsAndIA() {
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+          const dashboardResponse = await fetch(API_DASHBOARD_URL, { signal: controller.signal });
+          clearTimeout(timeoutId);
+
+          if (!dashboardResponse.ok) throw new Error("API IA indisponible");
+          const dashboardResult = await dashboardResponse.json();
+
+          if ((dashboardResult.status === "success" || dashboardResult.status === "fallback") && dashboardResult.data) {
+            const aiData = dashboardResult.data.data || dashboardResult.data;
+
+            if (aiData.metrics) {
+              const totalVolume = aiData.metrics.total_sales_volume || aiData.metrics.chiffre_affaires || 0;
+              const totalCount = aiData.metrics.total_sales_count || aiData.metrics.nombre_ventes || 0;
+              const avgPrice = aiData.metrics.avg_price_per_m2 || aiData.metrics.prix_moyen_m2 || 0;
+
+              document.getElementById("kpi-volume").innerText = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(totalVolume);
+              document.getElementById("kpi-count").innerText = `${totalCount} ventes`;
+              document.getElementById("kpi-avg").innerText = `${Math.round(avgPrice).toLocaleString('fr-FR')} € / m²`;
+            }
+
+            if (aiData.ia_insights) {
+              const coefM2 = aiData.ia_insights.value_of_one_m2 || aiData.ia_insights.coefficient_surface || 0;
+              const coefRoom = aiData.ia_insights.value_of_one_room || aiData.ia_insights.coefficient_pieces || 0;
+              const intercept = aiData.ia_insights.base_price || aiData.ia_insights.constante || 0;
+
+              document.getElementById("ia-explanation").innerHTML = `Notre modèle de <strong>Régression Linéaire Multiple</strong> a analysé l'historique de la table transactions. Il a déterminé que chaque mètre carré apporte une valeur brute moyenne de <strong>${Math.round(coefM2).toLocaleString('fr-FR')} €</strong>, et chaque pièce supplémentaire ajoute une plus-value de <strong>${Math.round(coefRoom).toLocaleString('fr-FR')} €</strong>.`;
+              document.getElementById("ia-formula-text").innerText = `Prix Estimé = (${Math.round(coefM2)} * Surface) + (${Math.round(coefRoom)} * Pièces) + (${Math.round(intercept)})`;
+            }
+
+            const chartData = aiData.chart_data || aiData.donnees_graphique || [];
+            const tableBody = document.getElementById("transactions-table-body");
+            tableBody.innerHTML = "";
+
+            if (chartData.length === 0) {
+              tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #7f8c8d;">Aucune transaction historique.</td></tr>`;
+              buildAnalyticsChart([], []);
+            } else {
+              const labels = chartData.map(row => {
+                if (Array.isArray(row)) return `Surface ${row[0]} m² • ${row[1]} p.`;
+                return row.label || `${row.area || row.surface || 0} m² • ${row.rooms || row.pieces || 0} p.`;
+              });
+              const dataPrices = chartData.map(row => {
+                if (Array.isArray(row)) return row[2] || 0;
+                return row.final_price || row.prix || row.price || 0;
+              });
+
+              buildAnalyticsChart(labels, dataPrices);
+
+              chartData.forEach(row => {
+                const surface = row.area || row.surface || row[0] || 0;
+                const pieces = row.rooms || row.pieces || row[1] || 0;
+                const prix = row.final_price || row.prix || row.price || row[2] || 0;
+
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td><strong>${surface} m²</strong></td><td>${pieces} p.</td><td>${prix.toLocaleString('fr-FR')} €</td>`;
+                tableBody.appendChild(tr);
+              });
+            }
+            return;
+          }
+        } catch (error) {
+          console.warn("Utilisation du repli automatique pour l'IA :", error);
+        }
+        useFallbackAnalytics();
+      }
+
+      function buildAnalyticsChart(labels, dataPrices) {
+        const canvas = document.getElementById("ymmoAnalyticsChart");
+        if (!canvas) return;
+
+        if (analyticsChart) {
+          analyticsChart.destroy();
+          analyticsChart = null;
+        }
+
+        analyticsChart = new Chart(canvas, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Prix constatés',
+              data: dataPrices,
+              borderColor: '#001f3f',
+              backgroundColor: 'rgba(0, 31, 63, 0.14)',
+              fill: true,
+              tension: 0.32,
+              pointRadius: 4,
+              pointBackgroundColor: '#ddb55c',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#fff',
+                titleColor: '#001f3f',
+                bodyColor: '#001f3f',
+                borderColor: '#e2e8f0',
+                borderWidth: 1
+              }
+            },
+            scales: {
+              x: { ticks: { color: '#34495e' }, grid: { color: 'rgba(227, 235, 245, 0.8)' } },
+              y: { ticks: { color: '#34495e' }, grid: { color: 'rgba(227, 235, 245, 0.8)' } }
+            }
+          }
+        });
+      }
+
+      function useFallbackAnalytics() {
+        document.getElementById("kpi-volume").innerText = "11 340 000 €";
+        document.getElementById("kpi-count").innerText = "22 ventes";
+        document.getElementById("kpi-avg").innerText = "4 210 € / m²";
+        document.getElementById("ia-explanation").innerHTML = "Chaque m² apporte environ <strong>3 720 €</strong> et chaque pièce génère en moyenne <strong>14 200 €</strong> de plus-value brute calculée.";
+        document.getElementById("ia-formula-text").innerText = "Prix Estimé = (3720.5 * Surface) + (14200 * Pièces) + (45000)";
+        const tableBody = document.getElementById("transactions-table-body");
+        tableBody.innerHTML = `
+            <tr><td><strong>165 m²</strong></td><td>6 p.</td><td>910 000 €</td></tr>
+            <tr><td><strong>52 m²</strong></td><td>2 p.</td><td>335 000 €</td></tr>
+            <tr><td><strong>19 m²</strong></td><td>1 p.</td><td>285 000 €</td></tr>
+        `;
+        buildAnalyticsChart(["165 m²", "52 m²", "19 m²"], [910000, 335000, 285000]);
+      }
+
+      async function loadAgencesAndAgents() {
+        try {
+          const agencesResponse = await fetch(API_AGENCES_URL);
+          if (!agencesResponse.ok) throw new Error("Ligne agences coupée");
+          const agences = await agencesResponse.json();
+
+          const agentsResponse = await fetch(API_AGENTS_URL);
+          if (!agentsResponse.ok) throw new Error("Ligne agents coupée");
+          const agents = await agentsResponse.json();
+
+          const selectElement = document.getElementById("agentAgence");
+          selectElement.innerHTML = "";
+          agences.forEach(agence => {
+            const option = document.createElement("option");
+            option.value = agence.id;
+            option.textContent = `${agence.nom} (ID: ${agence.id})`;
+            selectElement.appendChild(option);
+          });
+
+          const gridContainer = document.getElementById("grid-agences-container");
+          gridContainer.innerHTML = "";
+          agences.forEach(agence => {
+            const agenceCard = document.createElement("div");
+            agenceCard.className = "agence-card";
+            agenceCard.setAttribute("data-search", `${agence.nom} ${agence.ville || ''}`.toLowerCase());
+            agenceCard.innerHTML = `
+                <h3>🏢 ${agence.nom} ${agence.ville ? `(${agence.ville})` : ''}</h3>
+                <div id="list-agence-${agence.id}" class="agent-list">
+                    <div class="no-agent">Aucun agent dans cette filiale</div>
+                </div>
+            `;
+            gridContainer.appendChild(agenceCard);
+          });
+
+          agents.forEach(agent => {
+            const targetList = document.getElementById(`list-agence-${agent.agence_id}`);
+            if (targetList) {
+              const noAgentMsg = targetList.querySelector(".no-agent");
+              if (noAgentMsg) noAgentMsg.remove();
+
+              const row = document.createElement("div");
+              row.className = "agent-row";
+              row.innerHTML = `
+                  <div class="agent-info">
+                      <span class="agent-name">${agent.name}</span>
+                      <span class="agent-role">${agent.role}</span>
+                  </div>
+                  <div class="agent-actions">
+                      <button class="btn-delete" onclick="deleteAgentFromDB(${agent.id})">Révoquer</button>
+                  </div>
+              `;
+              targetList.appendChild(row);
+            }
+          });
+
+          filterAgences();
+        } catch (error) {
+          console.error("Erreur section Personnel :", error);
+          document.getElementById("grid-agences-container").innerHTML = "<p style='color:red; font-weight:bold;'>⚠️ Connexion interrompue avec la table des effectifs.</p>";
+        }
+      }
+
+      function filterAgences() {
+        const query = document.getElementById("searchAgence").value.toLowerCase().trim();
+        const cards = document.querySelectorAll(".agence-card");
+        cards.forEach(card => {
+          const content = card.getAttribute("data-search") || "";
+          card.classList.toggle("hidden", !content.includes(query));
+        });
+      }
+
+      async function addAgentToDB() {
+        const nameInput = document.getElementById("agentName");
+        const roleInput = document.getElementById("agentRole");
+        const agenceInput = document.getElementById("agentAgence");
+
+        if (!nameInput.value.trim() || !roleInput.value.trim() || !agenceInput.value) {
+          alert("Veuillez remplir le nom complet et le rôle de l'agent.");
+          return;
+        }
+
+        const nameParts = nameInput.value.trim().split(" ");
+        const firstname = nameParts[0];
+        const lastname = nameParts.slice(1).join(" ") || "Immo";
+        const email = `${firstname.toLowerCase()}.${lastname.toLowerCase()}@ymmo.fr`;
+
+        const payload = {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          password: "password123",
+          role: roleInput.value.trim(),
+          id_agence: parseInt(agenceInput.value)
+        };
+
+        try {
+          const response = await fetch(API_AGENTS_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          if (response.ok) {
+            nameInput.value = "";
+            roleInput.value = "";
+            await loadAgencesAndAgents();
+          } else {
+            const err = await response.json();
+            alert("Erreur lors de l'ajout : " + (err.detail || response.statusText));
+          }
+        } catch (error) {
+          console.error("Erreur d'ajout :", error);
+        }
+      }
+
+      async function deleteAgentFromDB(agentId) {
+        if (!confirm("Voulez-vous révoquer cet agent de la base de données ?")) return;
+        try {
+          const response = await fetch(`${API_AGENTS_URL}/${agentId}`, { method: "DELETE" });
+          if (response.ok) {
+            await loadAgencesAndAgents();
+          }
+        } catch (error) {
+          console.error("Erreur suppression agent :", error);
+        }
+      }
+
+      window.onload = loadDashboardData;
+    </script>
+  </body>
+</html>
