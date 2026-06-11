@@ -22,7 +22,7 @@ services:
     volumes:
       - ./backend:/app
     environment:
-      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@ymmo-db:5432/${DB_NAME}
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@ymmo-db-container:5432/${DB_NAME}
     depends_on:
       - ymmo-db
     networks:
